@@ -15,7 +15,8 @@ namespace DataAccess.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseSqlServer(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=API-Empresa;Integrated Security=True");
+                //.UseSqlServer(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=api_ioasys;Integrated Security=True");
+                .UseSqlServer(@"Data Source=.\sqlexpress;Initial Catalog=api_ioasys;Integrated Security=True");
         }
     }
 }
