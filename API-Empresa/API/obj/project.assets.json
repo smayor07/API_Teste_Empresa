@@ -6081,11 +6081,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\smayo\\Desktop\\API-Empresa\\API\\API.csproj",
+      "projectUniqueName": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\API\\API.csproj",
+      "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\API\\API.csproj",
       "packagesPath": "C:\\Users\\smayo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\API\\obj\\",
+      "outputPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\smayo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6100,12 +6100,13 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\smayo\\Desktop\\API-Empresa\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\Application\\Application.csproj"
+            "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Application\\Application.csproj": {
+              "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Application\\Application.csproj"
             },
-            "C:\\Users\\smayo\\Desktop\\API-Empresa\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\Entity\\Entity.csproj"
+            "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj"
             }
           }
         }
@@ -6118,6 +6119,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -6152,7 +6154,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

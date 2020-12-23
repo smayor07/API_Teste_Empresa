@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\smayo\\Desktop\\API-Empresa\\DataAccess\\DataAccess.csproj": {}
+    "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\smayo\\Desktop\\API-Empresa\\DataAccess\\DataAccess.csproj": {
+    "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\smayo\\Desktop\\API-Empresa\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\smayo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\DataAccess\\obj\\",
+        "outputPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\smayo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,9 +26,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\smayo\\Desktop\\API-Empresa\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\Entity\\Entity.csproj"
+              "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj"
               }
             }
           }
@@ -41,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -71,18 +73,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\smayo\\Desktop\\API-Empresa\\Entity\\Entity.csproj": {
+    "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\smayo\\Desktop\\API-Empresa\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\Entity\\Entity.csproj",
+        "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\smayo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\Entity\\obj\\",
+        "outputPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\smayo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -97,6 +99,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -108,6 +111,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -142,7 +146,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

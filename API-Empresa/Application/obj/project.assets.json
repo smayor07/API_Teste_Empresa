@@ -5871,11 +5871,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\smayo\\Desktop\\API-Empresa\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\Application\\Application.csproj",
+      "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\smayo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\Application\\obj\\",
+      "outputPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\smayo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5890,12 +5890,13 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\smayo\\Desktop\\API-Empresa\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\DataAccess\\DataAccess.csproj"
+            "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\DataAccess.csproj"
             },
-            "C:\\Users\\smayo\\Desktop\\API-Empresa\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\Entity\\Entity.csproj"
+            "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj"
             }
           }
         }
@@ -5908,6 +5909,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -5926,7 +5928,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

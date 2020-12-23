@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4dEpH6sER8tNyW0UBSsX6iaVVlW10U7VZ0ITaqA2cf2c3+o29/8uCxYvEjxGntnVaoH4ViDgpmEWqpqT6ESk0Q==",
+  "dgSpecHash": "YPT62n6U/MQBw9h3Ospz6nmMbQbg2TJ3TspOYSuuVCuzSWVomHG1xxPFkjTz4jCihpVavPk3UbaH+YaRzUEoIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\smayo\\Desktop\\API-Empresa\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\smayo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\smayo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
