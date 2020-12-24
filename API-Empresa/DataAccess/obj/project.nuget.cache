@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MdhTcbepz1pGA6PJpCGInTFbjZG+k7RaASd5mydIFJg8/fmeGfyuL8ZaGWDb2VDtK/7YnAUmH4K+M36HYi91uQ==",
+  "dgSpecHash": "RfhUy01ecroD5YhmtJDBASQEv9tx9Hz+R/CCIfqJ+NNQRCerdgV/klLuvsNwCJ8s/k/4tyaOo8WspG5D7JZCVg==",
   "success": true,
   "projectFilePath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\smayo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\smayo\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\smayo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\smayo\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\smayo\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

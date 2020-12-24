@@ -1,0 +1,9 @@
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Infra\bin\Debug\netcoreapp3.1\Filmes.Infra.deps.json
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Infra\bin\Debug\netcoreapp3.1\Filmes.Infra.dll
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Infra\bin\Debug\netcoreapp3.1\Filmes.Infra.pdb
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Infra\obj\Debug\netcoreapp3.1\Filmes.Infra.csprojAssemblyReference.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Infra\obj\Debug\netcoreapp3.1\Filmes.Infra.AssemblyInfoInputs.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Infra\obj\Debug\netcoreapp3.1\Filmes.Infra.AssemblyInfo.cs
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Infra\obj\Debug\netcoreapp3.1\Filmes.Infra.csproj.CoreCompileInputs.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Infra\obj\Debug\netcoreapp3.1\Filmes.Infra.dll
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Infra\obj\Debug\netcoreapp3.1\Filmes.Infra.pdb

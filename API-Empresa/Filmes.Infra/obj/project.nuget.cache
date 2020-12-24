@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "QRfddJpvi+6rX1G1axNi38cT8Xr2uOEeoB3iwFxEc3mYXWmG4x2xbVWcC/lqkjjmJq22X0VKHX/QNzJozC8Pgw==",
+  "dgSpecHash": "19IdLkKq5QeL84C4g/Y1psqK26p7Vfq1Y4e3jrRyPIlDQyzysOTd8+ITKODUr8vV88XmYwrkd1oUv+qyoDxovw==",
   "success": true,
   "projectFilePath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Infra\\Filmes.Infra.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\smayo\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

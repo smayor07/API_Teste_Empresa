@@ -1,0 +1,12 @@
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Application\bin\Debug\netcoreapp3.1\Filmes.Application.deps.json
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Application\bin\Debug\netcoreapp3.1\Filmes.Application.dll
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Application\bin\Debug\netcoreapp3.1\Filmes.Application.pdb
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Application\bin\Debug\netcoreapp3.1\Core.dll
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Application\bin\Debug\netcoreapp3.1\Core.pdb
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Application\obj\Debug\netcoreapp3.1\Filmes.Application.csprojAssemblyReference.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Application\obj\Debug\netcoreapp3.1\Filmes.Application.AssemblyInfoInputs.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Application\obj\Debug\netcoreapp3.1\Filmes.Application.AssemblyInfo.cs
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Application\obj\Debug\netcoreapp3.1\Filmes.Application.csproj.CoreCompileInputs.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Application\obj\Debug\netcoreapp3.1\Filmes.Application.csproj.CopyComplete
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Application\obj\Debug\netcoreapp3.1\Filmes.Application.dll
+C:\GIT\API_Teste_Empresa\API-Empresa\Filmes.Application\obj\Debug\netcoreapp3.1\Filmes.Application.pdb

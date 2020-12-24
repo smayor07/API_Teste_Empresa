@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "mDIrmNcpbAdVta58DBkCb6wK3Cf4PG3RL81sf94I3GGrafp3/TJcqaIspLK1G/6vVmkeqKs6lLe/TkgyXH3L5g==",
+  "dgSpecHash": "oQ8AEC2sOPPwNBDCyCfv9Azp3wTupfkUm8QCrZMXQhoFKucY+XXGM1pEV6kV0fy5kRskSkq2/SNz3RIoklhkwQ==",
   "success": true,
   "projectFilePath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Application\\Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\smayo\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\smayo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\smayo\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\smayo\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

@@ -6,6 +6,8 @@ using Application;
 using DataAccess.Repositories;
 using Entity.Interfaces.Application;
 using Entity.Interfaces.Repository;
+using Filmes.Application.Commands;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,6 +39,7 @@ namespace API
             services.AddScoped<IAdministradorRepository, AdministradorRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IFilmeRepository, FilmeRepository>();
+            services.AddScoped<IRequestHandler<VotarFilmeCommand, bool>, FilmeCommandHandler>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API-Teste Empresa", Version = "v1" });

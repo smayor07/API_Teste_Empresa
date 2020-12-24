@@ -9,10 +9,19 @@
       "Application/1.0.0": {
         "dependencies": {
           "DataAccess": "1.0.0",
-          "Entity": "1.0.0"
+          "Entity": "1.0.0",
+          "MediatR": "9.0.0"
         },
         "runtime": {
           "Application.dll": {}
+        }
+      },
+      "MediatR/9.0.0": {
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.0.0"
+          }
         }
       },
       "Microsoft.CSharp/4.5.0": {},
@@ -1045,6 +1054,7 @@
       "DataAccess/1.0.0": {
         "dependencies": {
           "Entity": "1.0.0",
+          "MediatR": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0"
         },
         "runtime": {
@@ -1053,6 +1063,7 @@
       },
       "Entity/1.0.0": {
         "dependencies": {
+          "MediatR": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
           "Swashbuckle.AspNetCore.Annotations": "5.6.3"
         },
@@ -1067,6 +1078,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "MediatR/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
+      "path": "mediatr/9.0.0",
+      "hashPath": "mediatr.9.0.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.5.0": {
       "type": "package",
