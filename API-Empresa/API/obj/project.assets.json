@@ -1629,6 +1629,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "Core": "1.0.0",
           "DataAccess": "1.0.0",
           "Entity": "1.0.0",
           "MediatR": "9.0.0"
@@ -1698,6 +1699,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Core": "1.0.0",
+          "Filmes.Domain": "1.0.0",
           "MediatR": "9.0.0"
         },
         "compile": {
@@ -1705,6 +1707,19 @@
         },
         "runtime": {
           "bin/placeholder/Filmes.Application.dll": {}
+        }
+      },
+      "Filmes.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "MediatR": "9.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Filmes.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Filmes.Domain.dll": {}
         }
       }
     }
@@ -6159,6 +6174,11 @@
       "type": "project",
       "path": "../Filmes.Application/Filmes.Application.csproj",
       "msbuildProject": "../Filmes.Application/Filmes.Application.csproj"
+    },
+    "Filmes.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Filmes.Domain/Filmes.Domain.csproj",
+      "msbuildProject": "../Filmes.Domain/Filmes.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {

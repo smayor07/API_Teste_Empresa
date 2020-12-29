@@ -4,14 +4,168 @@
     "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Infra\\Filmes.Infra.csproj": {}
   },
   "projects": {
-    "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Infra\\Filmes.Infra.csproj": {
+    "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Infra\\Filmes.Infra.csproj",
-        "projectName": "Filmes.Infra",
-        "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Infra\\Filmes.Infra.csproj",
+        "projectUniqueName": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\smayo\\.nuget\\packages\\",
-        "outputPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Infra\\obj\\",
+        "outputPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\smayo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj",
+        "projectName": "Entity",
+        "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\smayo\\.nuget\\packages\\",
+        "outputPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\smayo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Swashbuckle.AspNetCore.Annotations": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Domain\\Filmes.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Domain\\Filmes.Domain.csproj",
+        "projectName": "Filmes.Domain",
+        "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Domain\\Filmes.Domain.csproj",
+        "packagesPath": "C:\\Users\\smayo\\.nuget\\packages\\",
+        "outputPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\smayo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,6 +210,76 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Infra\\Filmes.Infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Infra\\Filmes.Infra.csproj",
+        "projectName": "Filmes.Infra",
+        "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Infra\\Filmes.Infra.csproj",
+        "packagesPath": "C:\\Users\\smayo\\.nuget\\packages\\",
+        "outputPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Infra\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\smayo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\DataAccess\\DataAccess.csproj"
+              },
+              "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Domain\\Filmes.Domain.csproj": {
+                "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Domain\\Filmes.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

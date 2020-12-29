@@ -1,10 +1,12 @@
-﻿using Filmes.Domain;
+﻿using Entity.Interfaces.Repository;
 using MediatR;
 using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Filmes.Application.Commands
+namespace Application.Commands.Filmes
 {
     public class FilmeCommandHandler : IRequestHandler<VotarFilmeCommand, bool>
     {
@@ -16,7 +18,7 @@ namespace Filmes.Application.Commands
         }
         public async Task<bool> Handle(VotarFilmeCommand message, CancellationToken cancellationToken)
         {
-            
+
         }
     }
 }

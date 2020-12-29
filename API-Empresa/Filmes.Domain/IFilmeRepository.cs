@@ -6,6 +6,6 @@ namespace Filmes.Domain
 {
     public interface IFilmeRepository
     {
-
+        void setVoto(VotoEnum voto);
     }
 }

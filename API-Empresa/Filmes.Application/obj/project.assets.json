@@ -33,6 +33,19 @@
         "runtime": {
           "bin/placeholder/Core.dll": {}
         }
+      },
+      "Filmes.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "MediatR": "9.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Filmes.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Filmes.Domain.dll": {}
+        }
       }
     }
   },
@@ -77,11 +90,17 @@
       "type": "project",
       "path": "../Core/Core.csproj",
       "msbuildProject": "../Core/Core.csproj"
+    },
+    "Filmes.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Filmes.Domain/Filmes.Domain.csproj",
+      "msbuildProject": "../Filmes.Domain/Filmes.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Core >= 1.0.0",
+      "Filmes.Domain >= 1.0.0",
       "MediatR >= 9.0.0"
     ]
   },
@@ -114,6 +133,9 @@
           "projectReferences": {
             "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Core\\Core.csproj": {
               "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Core\\Core.csproj"
+            },
+            "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Domain\\Filmes.Domain.csproj": {
+              "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Filmes.Domain\\Filmes.Domain.csproj"
             }
           }
         }
