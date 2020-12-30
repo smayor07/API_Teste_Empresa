@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Core.DomainObjects;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Entity.Entities
 {
-    public class Administrador
+    public class Administrador : EntityBase
     {
         public int AdministradorId { get; set; }
         public string Nome { get; set; }

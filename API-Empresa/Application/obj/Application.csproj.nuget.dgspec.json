@@ -241,7 +241,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Core\\Core.csproj": {
+                "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Core\\Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

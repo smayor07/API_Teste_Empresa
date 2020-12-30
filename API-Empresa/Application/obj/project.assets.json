@@ -1588,6 +1588,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "Core": "1.0.0",
           "MediatR": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
           "Swashbuckle.AspNetCore.Annotations": "5.6.3"

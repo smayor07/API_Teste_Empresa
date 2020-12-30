@@ -27,33 +27,33 @@ namespace API.Controllers
         {
             var resp = new BaseResponse();
 
-            try
-            {
-                Filme filme = new Filme()
-                {
-                    Nome = nome,
-                    Genero = genero,
-                    Diretor = diretor,
-                    Votos = 0
-                };
+            //try
+            //{
+            //    Filme filme = new Filme()
+            //    {
+            //        Nome = nome,
+            //        Genero = genero,
+            //        Diretor = diretor,
+            //        Votos = 0
+            //    };
 
-                _filmeApplication.CadastrarFilme(filme);
+            //    _filmeApplication.CadastrarFilme(filme);
 
-                var obj = new
-                {
-                    Filme = filme
-                };
+            //    var obj = new
+            //    {
+            //        Filme = filme
+            //    };
 
-                resp.Valor = obj;
-                resp.Mensagem = "Filme cadastrado com sucesso!";
-                resp.Sucesso = true;
-            }
-            catch (Exception ex)
-            {
-                resp.Mensagem = ex.Message;
-                resp.Sucesso = false;
-                throw;
-            }
+            //    resp.Valor = obj;
+            //    resp.Mensagem = "Filme cadastrado com sucesso!";
+            //    resp.Sucesso = true;
+            //}
+            //catch (Exception ex)
+            //{
+            //    resp.Mensagem = ex.Message;
+            //    resp.Sucesso = false;
+            //    throw;
+            //}
             return resp;
         }
 
@@ -63,37 +63,37 @@ namespace API.Controllers
         {
             var resp = new BaseResponse();
 
-            try
-            {
-                var filme = _filmeApplication.ObterFilmePorId(id);
+            //try
+            //{
+            //    var filme = _filmeApplication.ObterFilmePorId(id);
 
-                if (filme != null)
-                {
-                    filme.Votos += (int)voto;
+            //    if (filme != null)
+            //    {
+            //        filme.Votos += (int)voto;
 
-                    _filmeApplication.GravarVoto(filme);
+            //        _filmeApplication.GravarVoto(filme);
 
-                    var obj = new
-                    {
-                        Filme = filme
-                    };
+            //        var obj = new
+            //        {
+            //            Filme = filme
+            //        };
 
-                    resp.Valor = obj;
-                    resp.Mensagem = "Filme votado com sucesso!";
-                    resp.Sucesso = true;
-                }
-                else
-                {
-                    resp.Mensagem = "Nenhum filme encontrado!";
-                    resp.Sucesso = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                resp.Mensagem = ex.Message;
-                resp.Sucesso = false;
-                throw;
-            }
+            //        resp.Valor = obj;
+            //        resp.Mensagem = "Filme votado com sucesso!";
+            //        resp.Sucesso = true;
+            //    }
+            //    else
+            //    {
+            //        resp.Mensagem = "Nenhum filme encontrado!";
+            //        resp.Sucesso = true;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    resp.Mensagem = ex.Message;
+            //    resp.Sucesso = false;
+            //    throw;
+            //}
             return resp;
         }
 

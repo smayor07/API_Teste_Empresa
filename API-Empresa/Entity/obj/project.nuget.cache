@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RFWa4OytnUeXfaqSs6HEq1ec+0A5V43AZ9ZrHrQg47oVbgsPaIT91akAzaKwXiwGyP0dvEwsInYdEQOUhPVbsw==",
+  "dgSpecHash": "0OEJTO7Xdt67/tHydmPFcHjptaYwo0fSh7IlDxCTBoR05MN2M9vIu+20+QjncIbOPUXkUVXXwqSTLoRLRyEl3g==",
   "success": true,
   "projectFilePath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\smayo\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
     "C:\\Users\\smayo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\smayo\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\smayo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
