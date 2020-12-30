@@ -18,12 +18,6 @@ namespace Application.Commands.Filmes
         }
         public async Task<bool> Handle(VotarFilmeCommand message, CancellationToken cancellationToken)
         {
-            var filme = _filmeRepository.ObterFilmePorId(message.FilmeId);
-
-            if (filme == null) return false;
-
-            filme.Votos += message.Votos;
-            _filmeRepository.GravarVoto(filme);
             return true;
         }
     }

@@ -15,10 +15,13 @@ C:\GIT\API_Teste_Empresa\API-Empresa\Entity\bin\Debug\netcoreapp3.1\Entity.runti
 C:\GIT\API_Teste_Empresa\API-Empresa\Entity\bin\Debug\netcoreapp3.1\Entity.runtimeconfig.dev.json
 C:\GIT\API_Teste_Empresa\API-Empresa\Entity\bin\Debug\netcoreapp3.1\Entity.dll
 C:\GIT\API_Teste_Empresa\API-Empresa\Entity\bin\Debug\netcoreapp3.1\Entity.pdb
+C:\GIT\API_Teste_Empresa\API-Empresa\Entity\bin\Debug\netcoreapp3.1\Core.dll
+C:\GIT\API_Teste_Empresa\API-Empresa\Entity\bin\Debug\netcoreapp3.1\Core.pdb
 C:\GIT\API_Teste_Empresa\API-Empresa\Entity\obj\Debug\netcoreapp3.1\Entity.csprojAssemblyReference.cache
 C:\GIT\API_Teste_Empresa\API-Empresa\Entity\obj\Debug\netcoreapp3.1\Entity.AssemblyInfoInputs.cache
 C:\GIT\API_Teste_Empresa\API-Empresa\Entity\obj\Debug\netcoreapp3.1\Entity.AssemblyInfo.cs
 C:\GIT\API_Teste_Empresa\API-Empresa\Entity\obj\Debug\netcoreapp3.1\Entity.csproj.CoreCompileInputs.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\Entity\obj\Debug\netcoreapp3.1\Entity.csproj.CopyComplete
 C:\GIT\API_Teste_Empresa\API-Empresa\Entity\obj\Debug\netcoreapp3.1\Entity.dll
 C:\GIT\API_Teste_Empresa\API-Empresa\Entity\obj\Debug\netcoreapp3.1\Entity.pdb
 C:\GIT\API_Teste_Empresa\API-Empresa\Entity\obj\Debug\netcoreapp3.1\Entity.genruntimeconfig.cache

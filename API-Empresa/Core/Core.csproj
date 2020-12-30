@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="DomainObjects\AssertionConcern.cs" />
+    <Compile Remove="DomainObjects\Entity.cs" />
   </ItemGroup>
 
   <ItemGroup>

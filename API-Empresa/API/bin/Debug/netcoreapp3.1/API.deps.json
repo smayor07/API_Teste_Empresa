@@ -1491,6 +1491,7 @@
       },
       "Application/1.0.0": {
         "dependencies": {
+          "Core": "1.0.0",
           "DataAccess": "1.0.0",
           "Entity": "1.0.0",
           "MediatR": "9.0.0"
@@ -1529,6 +1530,7 @@
       },
       "Entity/1.0.0": {
         "dependencies": {
+          "Core": "1.0.0",
           "MediatR": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
           "Swashbuckle.AspNetCore.Annotations": "5.6.3"
@@ -1543,6 +1545,7 @@
       "Filmes.Application/1.0.0": {
         "dependencies": {
           "Core": "1.0.0",
+          "Filmes.Domain": "1.0.0",
           "MediatR": "9.0.0"
         },
         "runtime": {
@@ -1550,6 +1553,17 @@
         },
         "compile": {
           "Filmes.Application.dll": {}
+        }
+      },
+      "Filmes.Domain/1.0.0": {
+        "dependencies": {
+          "MediatR": "9.0.0"
+        },
+        "runtime": {
+          "Filmes.Domain.dll": {}
+        },
+        "compile": {
+          "Filmes.Domain.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -3943,6 +3957,11 @@
       "sha512": ""
     },
     "Filmes.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Filmes.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
