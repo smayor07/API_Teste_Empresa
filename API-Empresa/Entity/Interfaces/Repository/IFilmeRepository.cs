@@ -1,11 +1,12 @@
-﻿using Entity.Entities;
+﻿using Core.Data;
+using Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Entity.Interfaces.Repository
 {
-    public interface IFilmeRepository
+    public interface IFilmeRepository : IRepository<Filme>
     {
         void CadastrarFilme(Filme filme);
         Filme ObterFilmePorId(int id);
