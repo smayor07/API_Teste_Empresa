@@ -16,6 +16,7 @@ namespace Application.Commands.Filmes
         {
             _filmeRepository = filmeRepository;
         }
+
         public async Task<bool> Handle(VotarFilmeCommand message, CancellationToken cancellationToken)
         {
             return true;

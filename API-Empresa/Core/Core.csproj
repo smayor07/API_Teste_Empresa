@@ -8,6 +8,8 @@
     <Compile Remove="Class1.cs" />
     <Compile Remove="DomainObjects\AssertionConcern.cs" />
     <Compile Remove="DomainObjects\Entity.cs" />
+    <Compile Remove="IMediatrHandler.cs" />
+    <Compile Remove="MediatrHandler.cs" />
   </ItemGroup>
 
   <ItemGroup>

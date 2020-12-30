@@ -84,6 +84,7 @@ C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\API.pdb
 C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\FluentValidation.dll
 C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\MediatR.dll
+C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll

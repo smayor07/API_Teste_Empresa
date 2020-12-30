@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Setup;
 using Application;
 using DataAccess.Repositories;
 using Entity.Interfaces.Application;
@@ -33,13 +34,15 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddScoped<IAdministradorApplication, AdministradorApplication>();
-            services.AddScoped<IUsuarioApplication, UsuarioApplication>();
-            services.AddScoped<IFilmeApplication, FilmeApplication>();
-            services.AddScoped<IAdministradorRepository, AdministradorRepository>();
-            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-            services.AddScoped<IFilmeRepository, FilmeRepository>();
-            services.AddScoped<IRequestHandler<VotarFilmeCommand, bool>, FilmeCommandHandler>();
+            //services.AddScoped<IAdministradorApplication, AdministradorApplication>();
+            //services.AddScoped<IUsuarioApplication, UsuarioApplication>();
+            //services.AddScoped<IFilmeApplication, FilmeApplication>();
+            //services.AddScoped<IAdministradorRepository, AdministradorRepository>();
+            //services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            //services.AddScoped<IFilmeRepository, FilmeRepository>();
+            //services.AddScoped<IRequestHandler<VotarFilmeCommand, bool>, FilmeCommandHandler>();
+            services.RegisterServices();
+            services.AddMediatR(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API-Teste Empresa", Version = "v1" });
