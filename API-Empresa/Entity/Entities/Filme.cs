@@ -13,6 +13,8 @@ namespace Entity.Entities
         public string Diretor { get; private set; }
         public int Votos { get; private set; }
 
+        protected Filme() { }
+
         public Filme(int _filmeId, string _nome, string _genero, string _diretor, int _votos)
         {
             FilmeId = _filmeId;

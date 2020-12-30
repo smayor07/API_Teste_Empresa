@@ -1,4 +1,5 @@
-﻿using Entity.Interfaces.Repository;
+﻿using Core;
+using Entity.Interfaces.Repository;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace Application.Commands.Filmes
 {
-    public class FilmeCommandHandler : IRequestHandler<VotarFilmeCommand, bool>
+    public class FilmeCommandHandler : 
+        IRequestHandler<VotarFilmeCommand, bool>
     {
         private readonly IFilmeRepository _filmeRepository;
 
@@ -17,9 +19,22 @@ namespace Application.Commands.Filmes
             _filmeRepository = filmeRepository;
         }
 
-        public async Task<bool> Handle(VotarFilmeCommand message, CancellationToken cancellationToken)
+        public async Task<bool> Handle(VotarFilmeCommand command, CancellationToken cancellationToken)
         {
+            if (!ValidarComando(command)) return false;
+
             return true;
+        }
+
+        private bool ValidarComando(Command command)
+        {
+            if (command.EhValido()) return true;
+
+            foreach (var item in command.ValidationResult.Errors)
+            {
+                //lança um evento de erro
+            }
+            return false;
         }
     }
 }
