@@ -15,5 +15,6 @@ namespace Entity.Interfaces.Repository
         List<Filme> BuscarFilmePorGenero(string genero);
         List<Filme> BuscarFilmePorDiretor(string diretor);
         List<Filme> BuscarTodosFilmes();
+        void Dispose();
     }
 }

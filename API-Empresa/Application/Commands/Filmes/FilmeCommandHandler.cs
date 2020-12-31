@@ -23,7 +23,15 @@ namespace Application.Commands.Filmes
         {
             if (!ValidarComando(command)) return false;
 
-            return true;
+            var filme = _filmeRepository.ObterFilmePorId(command.FilmeId);
+
+            if (filme != null)
+            {
+                filme.GravarVoto(command.FilmeId,command.Votos);
+                _filmeRepository.GravarVoto(filme);
+            }
+            _filmeRepository.Dispose();
+            return true; 
         }
 
         private bool ValidarComando(Command command)

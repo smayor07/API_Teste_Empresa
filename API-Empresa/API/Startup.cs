@@ -1,22 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using API.Setup;
 using Application;
+using Application.Commands.Filmes;
+using Core.Bus;
+using DataAccess.Context;
 using DataAccess.Repositories;
 using Entity.Interfaces.Application;
 using Entity.Interfaces.Repository;
-using Filmes.Application.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace API
@@ -34,14 +29,26 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //services.AddScoped<IAdministradorApplication, AdministradorApplication>();
-            //services.AddScoped<IUsuarioApplication, UsuarioApplication>();
-            //services.AddScoped<IFilmeApplication, FilmeApplication>();
-            //services.AddScoped<IAdministradorRepository, AdministradorRepository>();
-            //services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-            //services.AddScoped<IFilmeRepository, FilmeRepository>();
-            //services.AddScoped<IRequestHandler<VotarFilmeCommand, bool>, FilmeCommandHandler>();
-            services.RegisterServices();
+
+            //Context
+            services.AddScoped<DbContext, APIDbContext>();
+
+            //Bus (Mediator)
+            services.AddScoped<IMediatorHandler, MediatorHandler>();
+
+            //Applications
+            services.AddScoped<IAdministradorApplication, AdministradorApplication>();
+            services.AddScoped<IUsuarioApplication, UsuarioApplication>();
+            services.AddScoped<IFilmeApplication, FilmeApplication>();
+
+            //Repositories
+            services.AddScoped<IAdministradorRepository, AdministradorRepository>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IFilmeRepository, FilmeRepository>();
+
+            //Commands
+            services.AddScoped<IRequestHandler<VotarFilmeCommand, bool>, FilmeCommandHandler>();
+
             services.AddMediatR(typeof(Startup));
             services.AddSwaggerGen(c =>
             {

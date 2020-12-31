@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Models;
+using Application.Commands.Filmes;
+using Core.Bus;
 using Entity.Entities;
 using Entity.Enum;
 using Entity.Interfaces.Application;
@@ -15,10 +17,12 @@ namespace API.Controllers
     [ApiController]
     public class FilmeController : ControllerBase
     {
-        private readonly IFilmeApplication _filmeApplication;
-        public FilmeController(IFilmeApplication filmeApplication)
+        //private readonly IFilmeApplication _filmeApplication;
+        private readonly IMediatorHandler _mediatorHandler;
+        public FilmeController(IMediatorHandler mediatorHandler)
         {
-            _filmeApplication = filmeApplication;
+            //_filmeApplication = filmeApplication;
+            _mediatorHandler = mediatorHandler;
         }
 
         [HttpPost]
@@ -63,6 +67,18 @@ namespace API.Controllers
         {
             var resp = new BaseResponse();
 
+            try
+            {
+                var command = new VotarFilmeCommand(id, (int)voto);
+                _mediatorHandler.EnviarComando(command);
+            }
+            catch (Exception ex)
+            {
+                resp.Mensagem = ex.Message;
+                resp.Sucesso = false;
+                throw;
+            }
+
             //try
             //{
             //    var filme = _filmeApplication.ObterFilmePorId(id);
@@ -103,107 +119,107 @@ namespace API.Controllers
         {
             var resp = new BaseResponse();
 
-            try
-            {
-                List<Filme> filmes = new List<Filme>();
+            //try
+            //{
+            //    List<Filme> filmes = new List<Filme>();
 
-                //0 => Nome, 1 => Genero, 2=> Diretor
-                switch (filtro)
-                {
-                    case FiltroBusca.Nome:
-                        if (nome != null)
-                        {
-                            filmes = _filmeApplication.BuscarFilmePorNome(nome);
+            //    //0 => Nome, 1 => Genero, 2=> Diretor
+            //    switch (filtro)
+            //    {
+            //        case FiltroBusca.Nome:
+            //            if (nome != null)
+            //            {
+            //                filmes = _filmeApplication.BuscarFilmePorNome(nome);
 
-                            if (filmes.Count > 0)
-                            {
-                                var obj = new
-                                {
-                                    Filme = filmes
-                                };
+            //                if (filmes.Count > 0)
+            //                {
+            //                    var obj = new
+            //                    {
+            //                        Filme = filmes
+            //                    };
 
-                                resp.Valor = obj;
-                                resp.Mensagem = $"A consulta retornou {filmes.Count} resultados";
-                                resp.Sucesso = true;
-                            }
-                            else
-                            {
-                                resp.Mensagem = "Nenhum filme foi encontrado!";
-                                resp.Sucesso = false;
-                            }
-                        }
-                        else
-                        {
-                            resp.Mensagem = "É necessario um nome para efetuar a busca!";
-                            resp.Sucesso = false;
-                        }
-                        break;
-                    case FiltroBusca.Genero:
-                        if (genero != null)
-                        {
-                            filmes = _filmeApplication.BuscarFilmePorGenero(genero);
+            //                    resp.Valor = obj;
+            //                    resp.Mensagem = $"A consulta retornou {filmes.Count} resultados";
+            //                    resp.Sucesso = true;
+            //                }
+            //                else
+            //                {
+            //                    resp.Mensagem = "Nenhum filme foi encontrado!";
+            //                    resp.Sucesso = false;
+            //                }
+            //            }
+            //            else
+            //            {
+            //                resp.Mensagem = "É necessario um nome para efetuar a busca!";
+            //                resp.Sucesso = false;
+            //            }
+            //            break;
+            //        case FiltroBusca.Genero:
+            //            if (genero != null)
+            //            {
+            //                filmes = _filmeApplication.BuscarFilmePorGenero(genero);
 
-                            if (filmes.Count > 0)
-                            {
-                                var obj = new
-                                {
-                                    Filme = filmes
-                                };
+            //                if (filmes.Count > 0)
+            //                {
+            //                    var obj = new
+            //                    {
+            //                        Filme = filmes
+            //                    };
 
-                                resp.Valor = obj;
-                                resp.Mensagem = $"A consulta retornou {filmes.Count} resultados";
-                                resp.Sucesso = true;
-                            }
-                            else
-                            {
-                                resp.Mensagem = "Nenhum filme foi encontrado!";
-                                resp.Sucesso = false;
-                            }
-                        }
-                        else
-                        {
-                            resp.Mensagem = "É necessario um genero para efetuar a busca!";
-                            resp.Sucesso = false;
-                        }
-                        break;
-                    case FiltroBusca.Diretor:
-                        if (diretor != null)
-                        {
-                            filmes = _filmeApplication.BuscarFilmePorDiretor(diretor);
+            //                    resp.Valor = obj;
+            //                    resp.Mensagem = $"A consulta retornou {filmes.Count} resultados";
+            //                    resp.Sucesso = true;
+            //                }
+            //                else
+            //                {
+            //                    resp.Mensagem = "Nenhum filme foi encontrado!";
+            //                    resp.Sucesso = false;
+            //                }
+            //            }
+            //            else
+            //            {
+            //                resp.Mensagem = "É necessario um genero para efetuar a busca!";
+            //                resp.Sucesso = false;
+            //            }
+            //            break;
+            //        case FiltroBusca.Diretor:
+            //            if (diretor != null)
+            //            {
+            //                filmes = _filmeApplication.BuscarFilmePorDiretor(diretor);
 
-                            if (filmes.Count > 0)
-                            {
-                                var obj = new
-                                {
-                                    Filme = filmes
-                                };
+            //                if (filmes.Count > 0)
+            //                {
+            //                    var obj = new
+            //                    {
+            //                        Filme = filmes
+            //                    };
 
-                                resp.Valor = obj;
-                                resp.Mensagem = $"A consulta retornou {filmes.Count} resultados";
-                                resp.Sucesso = true;
-                            }
-                            else
-                            {
-                                resp.Mensagem = "Nenhum filme foi encontrado!";
-                                resp.Sucesso = false;
-                            }
-                        }
-                        else
-                        {
-                            resp.Mensagem = "É necessario um diretor para efetuar a busca!";
-                            resp.Sucesso = false;
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                resp.Mensagem = ex.Message;
-                resp.Sucesso = false;
-                throw;
-            }
+            //                    resp.Valor = obj;
+            //                    resp.Mensagem = $"A consulta retornou {filmes.Count} resultados";
+            //                    resp.Sucesso = true;
+            //                }
+            //                else
+            //                {
+            //                    resp.Mensagem = "Nenhum filme foi encontrado!";
+            //                    resp.Sucesso = false;
+            //                }
+            //            }
+            //            else
+            //            {
+            //                resp.Mensagem = "É necessario um diretor para efetuar a busca!";
+            //                resp.Sucesso = false;
+            //            }
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    resp.Mensagem = ex.Message;
+            //    resp.Sucesso = false;
+            //    throw;
+            //}
             return resp;
         }
 
@@ -213,32 +229,32 @@ namespace API.Controllers
         {
             var resp = new BaseResponse();
 
-            try
-            {
-                var filme = _filmeApplication.ObterFilmePorId(id);
+            //try
+            //{
+            //    var filme = _filmeApplication.ObterFilmePorId(id);
 
-                if (filme != null)
-                {
-                    var obj = new
-                    {
-                        Filme = filme
-                    };
-                    resp.Valor = obj;
-                    resp.Mensagem = "Filme retornado com sucesso!";
-                    resp.Sucesso = true;
-                }
-                else
-                {
-                    resp.Mensagem = "Nenhum filme foi encontrado!";
-                    resp.Sucesso = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                resp.Mensagem = ex.Message;
-                resp.Sucesso = false;
-                throw;
-            }
+            //    if (filme != null)
+            //    {
+            //        var obj = new
+            //        {
+            //            Filme = filme
+            //        };
+            //        resp.Valor = obj;
+            //        resp.Mensagem = "Filme retornado com sucesso!";
+            //        resp.Sucesso = true;
+            //    }
+            //    else
+            //    {
+            //        resp.Mensagem = "Nenhum filme foi encontrado!";
+            //        resp.Sucesso = false;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    resp.Mensagem = ex.Message;
+            //    resp.Sucesso = false;
+            //    throw;
+            //}
             return resp;
         }
 
@@ -248,32 +264,32 @@ namespace API.Controllers
         {
             var resp = new BaseResponse();
 
-            try
-            {
-                var filmes = _filmeApplication.BuscarTodosFilmes();
+            //try
+            //{
+            //    var filmes = _filmeApplication.BuscarTodosFilmes();
 
-                if (filmes.Count > 0)
-                {
-                    var obj = new
-                    {
-                        Filme = filmes
-                    };
-                    resp.Valor = obj;
-                    resp.Mensagem = $"Foram retornados {filmes.Count} resultados!";
-                    resp.Sucesso = true;
-                }
-                else
-                {
-                    resp.Mensagem = "Nenhum filme foi encontrado!";
-                    resp.Sucesso = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                resp.Mensagem = ex.Message;
-                resp.Sucesso = false;
-                throw;
-            }
+            //    if (filmes.Count > 0)
+            //    {
+            //        var obj = new
+            //        {
+            //            Filme = filmes
+            //        };
+            //        resp.Valor = obj;
+            //        resp.Mensagem = $"Foram retornados {filmes.Count} resultados!";
+            //        resp.Sucesso = true;
+            //    }
+            //    else
+            //    {
+            //        resp.Mensagem = "Nenhum filme foi encontrado!";
+            //        resp.Sucesso = false;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    resp.Mensagem = ex.Message;
+            //    resp.Sucesso = false;
+            //    throw;
+            //}
             return resp;
         }
     }

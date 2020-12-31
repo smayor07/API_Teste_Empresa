@@ -47,5 +47,9 @@ namespace Application
         {
             return _filmeRepository.BuscarTodosFilmes();
         }
+        public void Dispose()
+        {
+            _filmeRepository?.Dispose();
+        }
     }
 }

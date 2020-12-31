@@ -16,7 +16,6 @@ namespace DataAccess.Repositories
         {
             _context = context;
         }
-
         public IUnitOfWork UnitOfWork { get; }
 
         public void CadastrarFilme(Filme filme)
