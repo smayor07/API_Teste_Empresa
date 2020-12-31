@@ -29,7 +29,7 @@ namespace Entity.Entities
         public void GravarVoto(int filmeId, int voto)
         {
             FilmeId = filmeId;
-            Votos = voto;
+            Votos += voto;
         }
 
         public void Validar()

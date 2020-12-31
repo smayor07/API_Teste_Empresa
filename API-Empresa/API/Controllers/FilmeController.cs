@@ -81,38 +81,6 @@ namespace API.Controllers
                 resp.Sucesso = false;
                 throw;
             }
-
-            //try
-            //{
-            //    var filme = _filmeApplication.ObterFilmePorId(id);
-
-            //    if (filme != null)
-            //    {
-            //        filme.Votos += (int)voto;
-
-            //        _filmeApplication.GravarVoto(filme);
-
-            //        var obj = new
-            //        {
-            //            Filme = filme
-            //        };
-
-            //        resp.Valor = obj;
-            //        resp.Mensagem = "Filme votado com sucesso!";
-            //        resp.Sucesso = true;
-            //    }
-            //    else
-            //    {
-            //        resp.Mensagem = "Nenhum filme encontrado!";
-            //        resp.Sucesso = true;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    resp.Mensagem = ex.Message;
-            //    resp.Sucesso = false;
-            //    throw;
-            //}
             return resp;
         }
 
