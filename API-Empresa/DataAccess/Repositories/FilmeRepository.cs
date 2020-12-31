@@ -12,57 +12,79 @@ namespace DataAccess.Repositories
     public class FilmeRepository : IFilmeRepository
     {
         public FilmeRepository() {}
-        public IUnitOfWork UnitOfWork { get; }
 
         public void CadastrarFilme(Filme filme)
         {
-            
-            _context.Add(filme);
-            _context.SaveChanges();
+            using (var _context = new APIDbContext())
+            {
+                _context.Add(filme);
+                _context.SaveChanges();
+            }
         }
 
         public Filme ObterFilmePorId(int id)
         {
-            return _context.Filmes.Where(x => x.FilmeId == id).FirstOrDefault();
+            using (var _context = new APIDbContext())
+            {
+                return _context.Filmes.Where(x => x.FilmeId == id).FirstOrDefault();
+            }
         }
         public void GravarVoto(Filme filme)
         {
-            _context.Update(filme);
-            _context.SaveChanges();
+            using (var _context = new APIDbContext())
+            {
+                _context.Update(filme);
+                _context.SaveChanges();
+            }
         }
 
         public List<Filme> BuscarFilmePorNome(string nome)
         {
-            return _context.Filmes
+            using (var _context = new APIDbContext())
+            {
+                return _context.Filmes
                     .Where(x => x.Nome.Equals(nome))
                     .OrderBy(x => x.Nome)
                     .ToList();
+            }
         }
         public List<Filme> BuscarFilmePorGenero(string genero)
         {
-            return _context.Filmes
+            using (var _context = new APIDbContext())
+            {
+                return _context.Filmes
                     .Where(x => x.Genero.Equals(genero))
                     .OrderBy(x => x.Nome)
                     .ToList();
+            }
         }
         public List<Filme> BuscarFilmePorDiretor(string diretor)
         {
-            return _context.Filmes
+            using (var _context = new APIDbContext())
+            {
+                return _context.Filmes
                     .Where(x => x.Diretor.Equals(diretor))
                     .OrderBy(x => x.Nome)
                     .ToList();
+            }
         }
 
         public List<Filme> BuscarTodosFilmes()
         {
-            return _context.Filmes
+            using (var _context = new APIDbContext())
+            {
+                return _context.Filmes
                     .OrderBy(x => x.Nome)
                     .ToList();
+            }
         }
 
         public void Dispose()
         {
-            _context.Dispose();
+            using (var _context = new APIDbContext())
+            {
+                _context.Dispose();
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entity.Entities
 {
-    public class Filme : EntityBase, IAggregateRoot
+    public class Filme : IAggregateRoot
     {
         public int FilmeId { get; private set; }
         public string Nome { get; private set; }
