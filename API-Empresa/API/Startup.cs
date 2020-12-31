@@ -31,7 +31,8 @@ namespace API
             services.AddControllers();
 
             //Context
-            services.AddScoped<DbContext, APIDbContext>();
+            services.AddDbContext<APIDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             //Bus (Mediator)
             services.AddScoped<IMediatorHandler, MediatorHandler>();

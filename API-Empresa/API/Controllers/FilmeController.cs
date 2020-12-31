@@ -17,11 +17,11 @@ namespace API.Controllers
     [ApiController]
     public class FilmeController : ControllerBase
     {
-        //private readonly IFilmeApplication _filmeApplication;
+        private readonly IFilmeApplication _filmeApplication;
         private readonly IMediatorHandler _mediatorHandler;
-        public FilmeController(IMediatorHandler mediatorHandler)
+        public FilmeController(IFilmeApplication filmeApplication, IMediatorHandler mediatorHandler)
         {
-            //_filmeApplication = filmeApplication;
+            _filmeApplication = filmeApplication;
             _mediatorHandler = mediatorHandler;
         }
 
@@ -71,6 +71,10 @@ namespace API.Controllers
             {
                 var command = new VotarFilmeCommand(id, (int)voto);
                 _mediatorHandler.EnviarComando(command);
+                _filmeApplication.Dispose();
+
+                resp.Mensagem = "Filme votado com sucesso!";
+                resp.Sucesso = true;
             }
             catch (Exception ex)
             {

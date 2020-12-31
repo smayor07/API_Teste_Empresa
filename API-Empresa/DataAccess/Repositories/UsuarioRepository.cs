@@ -10,49 +10,38 @@ namespace DataAccess.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        public UsuarioRepository() { }
+        private readonly APIDbContext _context;
+        public UsuarioRepository(APIDbContext context) 
+        {
+            _context = context;
+        }
 
         public void CadastrarUsuario(Usuario usuario)
         {
-            using (var _context = new APIDbContext())
-            {
-                _context.Add(usuario);
-                _context.SaveChanges();
-            }
+            _context.Add(usuario);
+            _context.SaveChanges();
         }
 
         public List<Usuario> ObterUsuariosCadastrados()
         {
-            using (var _context = new APIDbContext())
-            {
-                return _context.Usuarios.OrderBy(x => x.Nome).ToList();
-            }
+            return _context.Usuarios.OrderBy(x => x.Nome).ToList();
         }
 
         public Usuario ObterUsuarioPorId(int id)
         {
-            using (var _context = new APIDbContext())
-            {
-                return _context.Usuarios.Where(x => x.UsuarioId == id).FirstOrDefault();
-            }
+            return _context.Usuarios.Where(x => x.UsuarioId == id).FirstOrDefault();
         }
 
         public void EditarUsuario(Usuario usuario)
         {
-            using (var _context = new APIDbContext())
-            {
-                _context.Update(usuario);
-                _context.SaveChanges();
-            }
+            _context.Update(usuario);
+            _context.SaveChanges();
         }
 
         public void ExcluirUsuario(Usuario usuario)
         {
-            using (var _context = new APIDbContext())
-            {
-                _context.Update(usuario);
-                _context.SaveChanges();
-            }
+            _context.Update(usuario);
+            _context.SaveChanges();
         }
     }
 }

@@ -12,6 +12,8 @@ namespace DataAccess.Context
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Filme> Filmes { get; set; }
 
+        public APIDbContext(DbContextOptions<APIDbContext> options) : base(options) { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
