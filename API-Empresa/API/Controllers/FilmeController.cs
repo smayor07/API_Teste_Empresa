@@ -71,7 +71,6 @@ namespace API.Controllers
             {
                 var command = new VotarFilmeCommand(id, (int)voto);
                 _mediatorHandler.EnviarComando(command);
-                _filmeApplication.Dispose();
 
                 resp.Mensagem = "Filme votado com sucesso!";
                 resp.Sucesso = true;

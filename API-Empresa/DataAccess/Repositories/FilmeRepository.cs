@@ -11,15 +11,12 @@ namespace DataAccess.Repositories
 {
     public class FilmeRepository : IFilmeRepository
     {
-        private readonly APIDbContext _context;
-        public FilmeRepository(APIDbContext context) 
-        {
-            _context = context;
-        }
+        public FilmeRepository() {}
         public IUnitOfWork UnitOfWork { get; }
 
         public void CadastrarFilme(Filme filme)
         {
+            
             _context.Add(filme);
             _context.SaveChanges();
         }

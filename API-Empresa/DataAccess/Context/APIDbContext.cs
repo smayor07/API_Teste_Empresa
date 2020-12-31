@@ -1,8 +1,11 @@
-﻿using Entity.Entities;
+﻿using Core.Data;
+using Entity.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DataAccess.Context
 {
@@ -11,8 +14,6 @@ namespace DataAccess.Context
         public DbSet<Administrador> Administradores { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Filme> Filmes { get; set; }
-
-        public APIDbContext(DbContextOptions<APIDbContext> options) : base(options) { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

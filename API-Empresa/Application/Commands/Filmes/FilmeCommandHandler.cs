@@ -30,8 +30,8 @@ namespace Application.Commands.Filmes
                 filme.GravarVoto(command.FilmeId,command.Votos);
                 _filmeRepository.GravarVoto(filme);
             }
-            _filmeRepository.Dispose();
-            return true; 
+
+            return true;
         }
 
         private bool ValidarComando(Command command)
