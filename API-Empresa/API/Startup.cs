@@ -48,6 +48,7 @@ namespace API
 
             //Commands
             services.AddScoped<IRequestHandler<VotarFilmeCommand, bool>, FilmeCommandHandler>();
+            services.AddScoped<IRequestHandler<CadastrarFilmeCommand, bool>, FilmeCommandHandler>();
 
             services.AddMediatR(typeof(Startup));
             services.AddSwaggerGen(c =>

@@ -1,4 +1,5 @@
 ﻿using Core;
+using Entity.Entities;
 using Entity.Interfaces.Repository;
 using MediatR;
 using System;
@@ -9,8 +10,9 @@ using System.Threading.Tasks;
 
 namespace Application.Commands.Filmes
 {
-    public class FilmeCommandHandler : 
-        IRequestHandler<VotarFilmeCommand, bool>
+    public class FilmeCommandHandler :
+        IRequestHandler<VotarFilmeCommand, bool>,
+        IRequestHandler<CadastrarFilmeCommand, bool>
     {
         private readonly IFilmeRepository _filmeRepository;
 
@@ -27,9 +29,21 @@ namespace Application.Commands.Filmes
 
             if (filme != null)
             {
-                filme.GravarVoto(command.FilmeId,command.Votos);
+                filme.GravarVoto(command.FilmeId, command.Votos);
                 _filmeRepository.GravarVoto(filme);
             }
+            _filmeRepository.Dispose();
+
+            return true;
+        }
+
+        public async Task<bool> Handle(CadastrarFilmeCommand command, CancellationToken cancellationToken)
+        {
+            if (!ValidarComando(command)) return false;
+
+            Filme filme = new Filme(command.Nome, command.Genero, command.Diretor, command.Votos);
+
+            _filmeRepository.CadastrarFilme(filme);
             _filmeRepository.Dispose();
 
             return true;

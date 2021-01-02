@@ -15,9 +15,8 @@ namespace Entity.Entities
 
         protected Filme() { }
 
-        public Filme(int _filmeId, string _nome, string _genero, string _diretor, int _votos)
+        public Filme(string _nome, string _genero, string _diretor, int _votos)
         {
-            FilmeId = _filmeId;
             Nome = _nome;
             Genero = _genero;
             Diretor = _diretor;
@@ -38,7 +37,6 @@ namespace Entity.Entities
             Validacoes.ValidarSeVazio(Nome, "O nome do filme não pode estar vazio");
             Validacoes.ValidarSeVazio(Genero, "O genero não pode estar vazio");
             Validacoes.ValidarSeVazio(Diretor, "O nome do diretor não pode estar vazio");
-            Validacoes.ValidarSeMenorIgualMinimo(Votos, 1, "O valor do voto não pode ser zero");
         }
     }
 }

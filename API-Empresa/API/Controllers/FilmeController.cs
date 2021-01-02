@@ -31,33 +31,26 @@ namespace API.Controllers
         {
             var resp = new BaseResponse();
 
-            //try
-            //{
-            //    Filme filme = new Filme()
-            //    {
-            //        Nome = nome,
-            //        Genero = genero,
-            //        Diretor = diretor,
-            //        Votos = 0
-            //    };
+            try
+            {
+                var command = new CadastrarFilmeCommand(nome, genero, diretor);
+                _mediatorHandler.EnviarComando(command);
 
-            //    _filmeApplication.CadastrarFilme(filme);
+                var obj = new
+                {
+                    Filme = command
+                };
 
-            //    var obj = new
-            //    {
-            //        Filme = filme
-            //    };
+                resp.Valor = obj;
+                resp.Mensagem = "Filme cadastrado com sucesso!";
+                resp.Sucesso = true;
 
-            //    resp.Valor = obj;
-            //    resp.Mensagem = "Filme cadastrado com sucesso!";
-            //    resp.Sucesso = true;
-            //}
-            //catch (Exception ex)
-            //{
-            //    resp.Mensagem = ex.Message;
-            //    resp.Sucesso = false;
-            //    throw;
-            //}
+            }
+            catch (Exception ex)
+            {
+                resp.Mensagem = ex.Message;
+                resp.Sucesso = false;
+            }
             return resp;
         }
 
@@ -79,7 +72,6 @@ namespace API.Controllers
             {
                 resp.Mensagem = ex.Message;
                 resp.Sucesso = false;
-                throw;
             }
             return resp;
         }
