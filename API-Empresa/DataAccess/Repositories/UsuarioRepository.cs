@@ -43,5 +43,10 @@ namespace DataAccess.Repositories
             _context.Update(usuario);
             _context.SaveChanges();
         }
+
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
     }
 }

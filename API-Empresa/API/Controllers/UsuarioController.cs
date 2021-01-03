@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Models;
+using Application.Commands.Usuarios;
+using Core.Bus;
 using Entity.Entities;
 using Entity.Interfaces.Application;
 using Microsoft.AspNetCore.Http;
@@ -15,10 +17,12 @@ namespace API.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioApplication _usuarioApplication;
+        private readonly IMediatorHandler _mediatorHandler;
 
-        public UsuarioController(IUsuarioApplication usuarioApplication)
+        public UsuarioController(IUsuarioApplication usuarioApplication, IMediatorHandler mediatorHandler)
         {
             _usuarioApplication = usuarioApplication;
+            _mediatorHandler = mediatorHandler;
         }
 
         [HttpGet]
@@ -57,19 +61,12 @@ namespace API.Controllers
 
             try
             {
-                Usuario usuario = new Usuario()
-                {
-                    Nome = nome,
-                    Endereco = endereco,
-                    Email = email,
-                    Ativo = true
-                };
-
-                _usuarioApplication.CadastrarUsuario(usuario);
+                var command = new CadastrarUsuarioCommand(nome, endereco, email);
+                _mediatorHandler.EnviarComando(command);
 
                 var obj = new
                 {
-                    User = usuario
+                    User = command
                 };
 
                 resp.Valor = obj;
@@ -91,40 +88,40 @@ namespace API.Controllers
         {
             var resp = new BaseResponse();
 
-            try
-            {
-                var usuario = _usuarioApplication.ObterUsuarioPorId(id);
+            //try
+            //{
+            //    var usuario = _usuarioApplication.ObterUsuarioPorId(id);
 
-                if (usuario != null)
-                {
-                    usuario.UsuarioId = id;
-                    usuario.Nome = nome != null ? nome : usuario.Nome;
-                    usuario.Endereco = endereco != null ? endereco : usuario.Endereco;
-                    usuario.Email = email != null ? email : usuario.Email;
+            //    if (usuario != null)
+            //    {
+            //        usuario.UsuarioId = id;
+            //        usuario.Nome = nome != null ? nome : usuario.Nome;
+            //        usuario.Endereco = endereco != null ? endereco : usuario.Endereco;
+            //        usuario.Email = email != null ? email : usuario.Email;
 
-                    _usuarioApplication.EditarUsuario(usuario);
+            //        _usuarioApplication.EditarUsuario(usuario);
 
-                    var obj = new
-                    {
-                        User = usuario
-                    };
+            //        var obj = new
+            //        {
+            //            User = usuario
+            //        };
 
-                    resp.Valor = obj;
-                    resp.Mensagem = "Usuário editado com sucesso!";
-                    resp.Sucesso = true;
-                }
-                else
-                {
-                    resp.Mensagem = "Nenhum usuário encontrado!";
-                    resp.Sucesso = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                resp.Mensagem = ex.Message;
-                resp.Sucesso = false;
-                throw;
-            }
+            //        resp.Valor = obj;
+            //        resp.Mensagem = "Usuário editado com sucesso!";
+            //        resp.Sucesso = true;
+            //    }
+            //    else
+            //    {
+            //        resp.Mensagem = "Nenhum usuário encontrado!";
+            //        resp.Sucesso = true;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    resp.Mensagem = ex.Message;
+            //    resp.Sucesso = false;
+            //    throw;
+            //}
             return resp;
         }
 
@@ -135,29 +132,17 @@ namespace API.Controllers
             var resp = new BaseResponse();
             try
             {
-                var usuario = _usuarioApplication.ObterUsuarioPorId(id);
+                var command = new InativarUsuarioCommand(id);
+                _mediatorHandler.EnviarComando(command);
 
-                if (usuario != null)
+                var obj = new
                 {
-                    usuario.UsuarioId = id;
-                    usuario.Ativo = false;
+                    User = command
+                };
 
-                    _usuarioApplication.ExcluirUsuario(usuario);
-
-                    var obj = new
-                    {
-                        User = usuario
-                    };
-
-                    resp.Valor = obj;
-                    resp.Mensagem = "Usuário excluído com sucesso!";
-                    resp.Sucesso = true;
-                }
-                else
-                {
-                    resp.Mensagem = "Nenhum usuário encontrado!";
-                    resp.Sucesso = true;
-                }
+                resp.Valor = obj;
+                resp.Mensagem = "Usuário excluído com sucesso!";
+                resp.Sucesso = true;
             }
             catch (Exception ex)
             {

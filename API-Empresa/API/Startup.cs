@@ -1,3 +1,4 @@
+using API.Setup;
 using Application;
 using Application.Commands.Filmes;
 using Core.Bus;
@@ -30,25 +31,27 @@ namespace API
         {
             services.AddControllers();
 
-            //Context
-            services.AddDbContext<APIDbContext>();
+            ////Context
+            //services.AddDbContext<APIDbContext>();
 
-            //Bus (Mediator)
-            services.AddScoped<IMediatorHandler, MediatorHandler>();
+            ////Bus (Mediator)
+            //services.AddScoped<IMediatorHandler, MediatorHandler>();
 
-            //Applications
-            services.AddScoped<IAdministradorApplication, AdministradorApplication>();
-            services.AddScoped<IUsuarioApplication, UsuarioApplication>();
-            services.AddScoped<IFilmeApplication, FilmeApplication>();
+            ////Applications
+            //services.AddScoped<IAdministradorApplication, AdministradorApplication>();
+            //services.AddScoped<IUsuarioApplication, UsuarioApplication>();
+            //services.AddScoped<IFilmeApplication, FilmeApplication>();
 
-            //Repositories
-            services.AddScoped<IAdministradorRepository, AdministradorRepository>();
-            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-            services.AddScoped<IFilmeRepository, FilmeRepository>();
+            ////Repositories
+            //services.AddScoped<IAdministradorRepository, AdministradorRepository>();
+            //services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            //services.AddScoped<IFilmeRepository, FilmeRepository>();
 
-            //Commands
-            services.AddScoped<IRequestHandler<VotarFilmeCommand, bool>, FilmeCommandHandler>();
-            services.AddScoped<IRequestHandler<CadastrarFilmeCommand, bool>, FilmeCommandHandler>();
+            ////Commands
+            //services.AddScoped<IRequestHandler<VotarFilmeCommand, bool>, FilmeCommandHandler>();
+            //services.AddScoped<IRequestHandler<CadastrarFilmeCommand, bool>, FilmeCommandHandler>();
+
+            services.RegisterServices();
 
             services.AddMediatR(typeof(Startup));
             services.AddSwaggerGen(c =>

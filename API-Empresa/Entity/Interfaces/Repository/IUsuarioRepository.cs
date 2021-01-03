@@ -12,6 +12,6 @@ namespace Entity.Interfaces.Repository
         Usuario ObterUsuarioPorId(int id);
         void EditarUsuario(Usuario usuario);
         void ExcluirUsuario(Usuario usuario);
-        
+        void Dispose();
     }
 }
