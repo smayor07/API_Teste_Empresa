@@ -6,12 +6,16 @@
 
   <ItemGroup>
     <Compile Remove="Base\**" />
+    <Compile Remove="Events\Filmes\**" />
     <EmbeddedResource Remove="Base\**" />
+    <EmbeddedResource Remove="Events\Filmes\**" />
     <None Remove="Base\**" />
+    <None Remove="Events\Filmes\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="Commands\Administradores\CadastrarUsuarioCommand.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Events\Filmes\" />
+    <Folder Include="Events\" />
   </ItemGroup>
 
 </Project>

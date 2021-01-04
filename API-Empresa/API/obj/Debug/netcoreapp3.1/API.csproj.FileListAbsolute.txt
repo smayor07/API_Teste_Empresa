@@ -73,6 +73,12 @@ C:\Users\smayo\Desktop\API-Empresa\API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNe
 C:\Users\smayo\Desktop\API-Empresa\API\obj\Debug\netcoreapp3.1\API.csproj.CoreCompileInputs.cache
 C:\Users\smayo\Desktop\API-Empresa\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\smayo\Desktop\API-Empresa\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\API.csprojAssemblyReference.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\API.AssemblyInfoInputs.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\API.AssemblyInfo.cs
+C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\API.csproj.CoreCompileInputs.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
+C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache
 C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\appsettings.json
 C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\API.exe
@@ -143,12 +149,6 @@ C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\Core.pdb
 C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\DataAccess.pdb
 C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\Filmes.Application.pdb
 C:\GIT\API_Teste_Empresa\API-Empresa\API\bin\Debug\netcoreapp3.1\Filmes.Domain.pdb
-C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\API.csprojAssemblyReference.cache
-C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\API.AssemblyInfoInputs.cache
-C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\API.AssemblyInfo.cs
-C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\API.csproj.CoreCompileInputs.cache
-C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
-C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache
 C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\staticwebassets\API.StaticWebAssets.Manifest.cache
 C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\staticwebassets\API.StaticWebAssets.xml
 C:\GIT\API_Teste_Empresa\API-Empresa\API\obj\Debug\netcoreapp3.1\scopedcss\bundle\API.styles.css

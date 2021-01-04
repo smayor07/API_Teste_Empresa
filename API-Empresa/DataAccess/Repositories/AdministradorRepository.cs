@@ -42,10 +42,15 @@ namespace DataAccess.Repositories
             _context.Update(administrador);
             _context.SaveChanges();
         }
-        public void ExluirAdministrador(Administrador administrador)
+        public void ExcluirAdministrador(Administrador administrador)
         {
             _context.Update(administrador);
             _context.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            _context.Dispose();
         }
     }
 }

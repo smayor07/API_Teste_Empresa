@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Models;
+using Application.Commands.Administradores;
+using Application.Queries.Administradores;
+using Core.Bus;
 using Entity.Entities;
 using Entity.Interfaces.Application;
 using Microsoft.AspNetCore.Http;
@@ -14,11 +17,13 @@ namespace API.Controllers
     [ApiController]
     public class AdministradorController : ControllerBase
     {
-        private readonly IAdministradorApplication _administradorApplication;
+        private readonly IMediatorHandler _mediatorHandler;
+        private readonly IAdministradorQueries _administradorQueries;
 
-        public AdministradorController(IAdministradorApplication administradorApplication)
+        public AdministradorController(IMediatorHandler mediatorHandler, IAdministradorQueries administradorQueries)
         {
-            _administradorApplication = administradorApplication;
+            _administradorQueries = administradorQueries;
+            _mediatorHandler = mediatorHandler;
         }
 
         [HttpGet]
@@ -29,7 +34,7 @@ namespace API.Controllers
 
             try
             {
-                var administradores = _administradorApplication.ObterAdministradoresCadastrados();
+                var administradores = _administradorQueries.ObterAdministradoresCadastrados();
 
                 var obj = new
                 {
@@ -56,19 +61,12 @@ namespace API.Controllers
             var resp = new BaseResponse();
             try
             {
-                Administrador administrador = new Administrador
-                {
-                    Nome = nome,
-                    Endereco = endereco,
-                    Email = email,
-                    Ativo = true
-                };
-
-                _administradorApplication.CadastrarAdministrador(administrador);
+                var command = new CadastrarAdministradorCommand(nome, endereco, email);
+                _mediatorHandler.EnviarComando(command);
 
                 var obj = new
                 {
-                    Adm = administrador
+                    Adm = command
                 };
 
                 resp.Valor = obj;
@@ -92,7 +90,7 @@ namespace API.Controllers
 
             try
             {
-                var usuarios = _administradorApplication.ObterUsuariosAtivos();
+                var usuarios = _administradorQueries.ObterUsuariosAtivos();
 
                 var obj = new
                 {
@@ -120,31 +118,17 @@ namespace API.Controllers
 
             try
             {
-                var administrador = _administradorApplication.ObterAdministradorPorId(id);
+                var command = new EditarAdministradorCommand(id, nome, endereco, email);
+                _mediatorHandler.EnviarComando(command);
 
-                if (administrador != null)
+                var obj = new
                 {
-                    administrador.AdministradorId = id;
-                    administrador.Nome = nome != null ? nome : administrador.Nome;
-                    administrador.Endereco = endereco != null ? endereco : administrador.Endereco;
-                    administrador.Email = email != null ? email : administrador.Email;
+                    Adm = command
+                };
 
-                    _administradorApplication.EditarAdministrador(administrador);
-
-                    var obj = new
-                    {
-                        Adm = administrador
-                    };
-
-                    resp.Valor = obj;
-                    resp.Mensagem = "Administrador editado com sucesso!";
-                    resp.Sucesso = true;
-                }
-                else
-                {
-                    resp.Mensagem = "Nenhum administrador encontrado!";
-                    resp.Sucesso = true;
-                }
+                resp.Valor = obj;
+                resp.Mensagem = "Administrador editado com sucesso!";
+                resp.Sucesso = true;
             }
             catch (Exception ex)
             {
@@ -162,29 +146,17 @@ namespace API.Controllers
             var resp = new BaseResponse();
             try
             {
-                var administrador = _administradorApplication.ObterAdministradorPorId(id);
+                var command = new InativarAdministradorCommand(id);
+                _mediatorHandler.EnviarComando(command);
 
-                if (administrador != null)
+                var obj = new
                 {
-                    administrador.AdministradorId = id;
-                    administrador.Ativo = false;
+                    Adm = command
+                };
 
-                    _administradorApplication.ExcluirAdministrador(administrador);
-
-                    var obj = new
-                    {
-                        Adm = administrador
-                    };
-
-                    resp.Valor = obj;
-                    resp.Mensagem = "Administrador excluído com sucesso!";
-                    resp.Sucesso = true;
-                }
-                else
-                {
-                    resp.Mensagem = "Nenhum administrador encontrado!";
-                    resp.Sucesso = true;
-                }
+                resp.Valor = obj;
+                resp.Mensagem = "Administrador excluído com sucesso!";
+                resp.Sucesso = true;
             }
             catch (Exception ex)
             {

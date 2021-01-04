@@ -12,7 +12,8 @@ namespace Entity.Interfaces.Repository
         List<Usuario> ObterUsuariosAtivos();
         Administrador ObterAdministradorPorId(int id);
         void EditarAdministrador(Administrador administrador);
-        void ExluirAdministrador(Administrador administrador);
+        void ExcluirAdministrador(Administrador administrador);
         List<Administrador> ObterAdministradoresCadastrados();
+        void Dispose();
     }
 }

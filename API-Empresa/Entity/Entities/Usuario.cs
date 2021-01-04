@@ -39,7 +39,7 @@ namespace Entity.Entities
         {
             Validacoes.ValidarSeVazio(UsuarioId.ToString(), "O id do usuario não pode estar vazio");
             Validacoes.ValidarSeVazio(Nome, "O nome do filme não pode estar vazio");
-            Validacoes.ValidarSeVazio(Endereco, "O Endereco não pode estar vazio");
+            Validacoes.ValidarSeVazio(Endereco, "O endereco não pode estar vazio");
             Validacoes.ValidarSeVazio(Email, "O email não pode estar vazio");
         }
     }

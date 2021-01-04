@@ -44,7 +44,7 @@ namespace Application
 
         public void ExcluirAdministrador(Administrador administrador)
         {
-            _administradorRepository.ExluirAdministrador(administrador);
+            _administradorRepository.ExcluirAdministrador(administrador);
         }
     }
 }

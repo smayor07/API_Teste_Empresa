@@ -1,6 +1,8 @@
 ﻿using Application;
+using Application.Commands.Administradores;
 using Application.Commands.Filmes;
 using Application.Commands.Usuarios;
+using Application.Queries.Administradores;
 using Application.Queries.Filmes;
 using Application.Queries.Usuarios;
 using Core.Bus;
@@ -49,6 +51,13 @@ namespace API.Setup
             services.AddScoped<IRequestHandler<EditarUsuarioCommand, bool>, UsuarioCommandHandler>();
             //Queries Usuarios
             services.AddScoped<IUsuarioQueries, UsuarioQueries>();
+
+            //Commands Administradores
+            services.AddScoped<IRequestHandler<CadastrarAdministradorCommand, bool>, AdministradorCommandHandler>();
+            services.AddScoped<IRequestHandler<InativarAdministradorCommand, bool>, AdministradorCommandHandler>();
+            services.AddScoped<IRequestHandler<EditarAdministradorCommand, bool>, AdministradorCommandHandler>();
+            //Queries Administradores
+            services.AddScoped<IAdministradorQueries, AdministradorQueries>();
         }
     }
 }
