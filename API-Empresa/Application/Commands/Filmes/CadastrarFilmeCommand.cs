@@ -9,10 +9,10 @@ namespace Application.Commands.Filmes
 {
     public class CadastrarFilmeCommand : Command
     {
-        public string Nome { get; set; }
-        public string Genero { get; set; }
-        public string Diretor { get; set; }
-        public int Votos { get; set; }
+        public string Nome { get; private set; }
+        public string Genero { get; private set; }
+        public string Diretor { get; private set; }
+        public int Votos { get; private set; }
 
         public CadastrarFilmeCommand(string _nome, string _genero, string _diretor)
         {

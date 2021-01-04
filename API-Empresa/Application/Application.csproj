@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <Folder Include="Events\Filmes\" />
-    <Folder Include="Queries\Filmes\" />
   </ItemGroup>
 
 </Project>

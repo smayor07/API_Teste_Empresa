@@ -12,7 +12,8 @@ namespace Application.Commands.Usuarios
 {
     public class UsuarioCommandHandler : 
         IRequestHandler<CadastrarUsuarioCommand, bool>,
-        IRequestHandler<InativarUsuarioCommand, bool>
+        IRequestHandler<InativarUsuarioCommand, bool>,
+        IRequestHandler<EditarUsuarioCommand, bool>
     {
         private readonly IUsuarioRepository _usuarioRepository;
 
@@ -39,12 +40,30 @@ namespace Application.Commands.Usuarios
 
             var usuario = _usuarioRepository.ObterUsuarioPorId(command.UsuarioId);
 
-            if (usuario != null)
-            {
-                usuario.InativarUsuario();
-                _usuarioRepository.ExcluirUsuario(usuario);
-                _usuarioRepository.Dispose();
-            }
+            if (usuario == null) throw new Exception("Nenhum usuário encontrado!");
+
+            usuario.InativarUsuario();
+            _usuarioRepository.ExcluirUsuario(usuario);
+            _usuarioRepository.Dispose();
+
+            return true;
+        }
+
+        public async Task<bool> Handle(EditarUsuarioCommand command, CancellationToken cancellationToken)
+        {
+            if (!ValidarComando(command)) return false;
+
+            var usuario = _usuarioRepository.ObterUsuarioPorId(command.UsuarioId);
+
+            if (usuario == null) throw new Exception("Nenhum usuário encontrado!");
+
+            var nomeUsuario = command.Nome != null ? command.Nome : usuario.Nome;
+            var enderecoUsuario = command.Endereco != null ? command.Endereco : usuario.Endereco;
+            var emailUsuario = command.Email != null ? command.Email : usuario.Email;
+
+            usuario.EditarUsuario(command.UsuarioId, nomeUsuario, enderecoUsuario, emailUsuario);
+            _usuarioRepository.EditarUsuario(usuario);
+            _usuarioRepository.Dispose();
 
             return true;
         }

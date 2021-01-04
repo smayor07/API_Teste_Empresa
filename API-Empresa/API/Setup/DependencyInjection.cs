@@ -1,6 +1,8 @@
 ﻿using Application;
 using Application.Commands.Filmes;
 using Application.Commands.Usuarios;
+using Application.Queries.Filmes;
+using Application.Queries.Usuarios;
 using Core.Bus;
 using DataAccess.Context;
 using DataAccess.Repositories;
@@ -38,10 +40,15 @@ namespace API.Setup
             //Commands Filmes
             services.AddScoped<IRequestHandler<VotarFilmeCommand, bool>, FilmeCommandHandler>();
             services.AddScoped<IRequestHandler<CadastrarFilmeCommand, bool>, FilmeCommandHandler>();
+            //Queries Filmes
+            services.AddScoped<IFilmeQueries, FilmeQueries>();
 
             //Commands Usuarios
             services.AddScoped<IRequestHandler<CadastrarUsuarioCommand, bool>, UsuarioCommandHandler>();
             services.AddScoped<IRequestHandler<InativarUsuarioCommand, bool>, UsuarioCommandHandler>();
+            services.AddScoped<IRequestHandler<EditarUsuarioCommand, bool>, UsuarioCommandHandler>();
+            //Queries Usuarios
+            services.AddScoped<IUsuarioQueries, UsuarioQueries>();
         }
     }
 }

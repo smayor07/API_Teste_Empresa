@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.Models;
 using Application.Commands.Usuarios;
+using Application.Queries.Usuarios;
 using Core.Bus;
 using Entity.Entities;
 using Entity.Interfaces.Application;
@@ -16,13 +17,13 @@ namespace API.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private readonly IUsuarioApplication _usuarioApplication;
         private readonly IMediatorHandler _mediatorHandler;
+        private readonly IUsuarioQueries _usuarioQueries;
 
-        public UsuarioController(IUsuarioApplication usuarioApplication, IMediatorHandler mediatorHandler)
+        public UsuarioController(IMediatorHandler mediatorHandler, IUsuarioQueries usuarioQueries)
         {
-            _usuarioApplication = usuarioApplication;
             _mediatorHandler = mediatorHandler;
+            _usuarioQueries = usuarioQueries;
         }
 
         [HttpGet]
@@ -33,7 +34,7 @@ namespace API.Controllers
 
             try
             {
-                var usuarios = _usuarioApplication.ObterUsuariosCadastrados();
+                var usuarios = _usuarioQueries.ObterUsuariosCadastrados();
 
                 var obj = new
                 {
@@ -88,40 +89,26 @@ namespace API.Controllers
         {
             var resp = new BaseResponse();
 
-            //try
-            //{
-            //    var usuario = _usuarioApplication.ObterUsuarioPorId(id);
+            try
+            {
+                var command = new EditarUsuarioCommand(id, nome, endereco, email);
+                _mediatorHandler.EnviarComando(command);
 
-            //    if (usuario != null)
-            //    {
-            //        usuario.UsuarioId = id;
-            //        usuario.Nome = nome != null ? nome : usuario.Nome;
-            //        usuario.Endereco = endereco != null ? endereco : usuario.Endereco;
-            //        usuario.Email = email != null ? email : usuario.Email;
+                var obj = new
+                {
+                    User = command
+                };
 
-            //        _usuarioApplication.EditarUsuario(usuario);
-
-            //        var obj = new
-            //        {
-            //            User = usuario
-            //        };
-
-            //        resp.Valor = obj;
-            //        resp.Mensagem = "Usuário editado com sucesso!";
-            //        resp.Sucesso = true;
-            //    }
-            //    else
-            //    {
-            //        resp.Mensagem = "Nenhum usuário encontrado!";
-            //        resp.Sucesso = true;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    resp.Mensagem = ex.Message;
-            //    resp.Sucesso = false;
-            //    throw;
-            //}
+                resp.Valor = obj;
+                resp.Mensagem = "Usuário editado com sucesso!";
+                resp.Sucesso = true;
+            }
+            catch (Exception ex)
+            {
+                resp.Mensagem = ex.Message;
+                resp.Sucesso = false;
+                throw;
+            }
             return resp;
         }
 

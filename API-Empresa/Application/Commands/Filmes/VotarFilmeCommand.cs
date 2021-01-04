@@ -8,8 +8,8 @@ namespace Application.Commands.Filmes
 {
     public class VotarFilmeCommand : Command
     {
-        public int FilmeId { get; set; }
-        public int Votos { get; set; }
+        public int FilmeId { get; private set; }
+        public int Votos { get; private set; }
 
         public VotarFilmeCommand(int _filmeId, int _voto)
         {

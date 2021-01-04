@@ -8,7 +8,7 @@ namespace Application.Commands.Usuarios
 {
     public class InativarUsuarioCommand : Command
     {
-        public int UsuarioId { get; set; }
+        public int UsuarioId { get; private set; }
 
         public InativarUsuarioCommand(int _usuarioId)
         {

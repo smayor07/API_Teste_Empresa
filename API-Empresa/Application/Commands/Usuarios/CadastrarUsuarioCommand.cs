@@ -8,10 +8,10 @@ namespace Application.Commands.Usuarios
 {
     public class CadastrarUsuarioCommand : Command
     {
-        public string Nome { get; set; }
-        public string Endereco { get; set; }
-        public string Email { get; set; }
-        public bool Ativo { get; set; }
+        public string Nome { get; private set; }
+        public string Endereco { get; private set; }
+        public string Email { get; private set; }
+        public bool Ativo { get; private set; }
 
         public CadastrarUsuarioCommand(string _nome, string _endereco, string _email)
         {

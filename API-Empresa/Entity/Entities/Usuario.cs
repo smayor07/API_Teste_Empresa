@@ -27,6 +27,14 @@ namespace Entity.Entities
 
         public void InativarUsuario() => Ativo = false;
 
+        public void EditarUsuario(int usuarioId ,string _nome, string _endereco, string _email)
+        {
+            UsuarioId = usuarioId;
+            Nome = _nome;
+            Endereco = _endereco;
+            Email = _email;
+        }
+
         public void Validar()
         {
             Validacoes.ValidarSeVazio(UsuarioId.ToString(), "O id do usuario não pode estar vazio");
