@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "4eDa8VZvfQeY2hb34doXOfj0xPIs8ZEwwrRenRqju8IGK9s705bbznXG/x/FJogYud7VAeZJ3oTVnBfKfthr3w==",
+  "success": true,
+  "projectFilePath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\MessageBus\\MessageBus.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\smayo\\.nuget\\packages\\easynetq\\6.3.1\\easynetq.6.3.1.nupkg.sha512",
+    "C:\\Users\\smayo\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\smayo\\.nuget\\packages\\rabbitmq.client\\6.2.1\\rabbitmq.client.6.2.1.nupkg.sha512",
+    "C:\\Users\\smayo\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\smayo\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}
