@@ -9,6 +9,7 @@ using Core.Integration;
 using Core.Integration.Filmes;
 using Entity.Entities;
 using Entity.Enum;
+using MessageBus;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -19,10 +20,12 @@ namespace API.Controllers
     {
         private readonly IMediatorHandler _mediatorHandler;
         private readonly IFilmeQueries _filmeQueries;
-        public FilmeController(IMediatorHandler mediatorHandler, IFilmeQueries filmeQueries)
+        private readonly IMessageBus _messageBus;
+        public FilmeController(IMediatorHandler mediatorHandler, IFilmeQueries filmeQueries, IMessageBus messageBus)
         {
             _mediatorHandler = mediatorHandler;
             _filmeQueries = filmeQueries;
+            _messageBus = messageBus;
         }
 
         [HttpPost]
@@ -230,6 +233,8 @@ namespace API.Controllers
             var filmeBd = _filmeQueries.ObterFilmePorId(filmeId);
 
             var filmeVotado = new VotoFilmeIntegrationEvent(filmeBd.FilmeId, (int) voto);
+
+            return await _messageBus.ResquestAsync<VotoFilmeIntegrationEvent, ResponseMessage>(filmeVotado);
         }
 
     }

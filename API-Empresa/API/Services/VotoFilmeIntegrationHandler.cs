@@ -24,12 +24,12 @@ namespace API.Services
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _messageBus.RespondAsync<VotoFilmeIntegrationEvent, ResponseMessage>(async request =>
-                new ResponseMessage(await VotarFilme(request)));
+                await VotarFilme(request));
 
             return Task.CompletedTask;
         }
 
-        private async Task<bool> VotarFilme(VotoFilmeIntegrationEvent message)
+        private async Task<ResponseMessage> VotarFilme(VotoFilmeIntegrationEvent message)
         {
             var filmeCommand = new VotarFilmeCommand(message.FilmeId, message.Votos);
             bool sucesso = false;
@@ -40,7 +40,7 @@ namespace API.Services
                 sucesso = await mediator.EnviarComando(filmeCommand);
             }
 
-            return sucesso;
+            return new ResponseMessage(sucesso);
         }
     }
 }

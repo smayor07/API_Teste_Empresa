@@ -1,0 +1,12 @@
+C:\GIT\API_Teste_Empresa\API-Empresa\MessageBus\bin\Debug\netcoreapp3.1\MessageBus.deps.json
+C:\GIT\API_Teste_Empresa\API-Empresa\MessageBus\bin\Debug\netcoreapp3.1\MessageBus.dll
+C:\GIT\API_Teste_Empresa\API-Empresa\MessageBus\bin\Debug\netcoreapp3.1\MessageBus.pdb
+C:\GIT\API_Teste_Empresa\API-Empresa\MessageBus\bin\Debug\netcoreapp3.1\Core.dll
+C:\GIT\API_Teste_Empresa\API-Empresa\MessageBus\bin\Debug\netcoreapp3.1\Core.pdb
+C:\GIT\API_Teste_Empresa\API-Empresa\MessageBus\obj\Debug\netcoreapp3.1\MessageBus.csprojAssemblyReference.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\MessageBus\obj\Debug\netcoreapp3.1\MessageBus.AssemblyInfoInputs.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\MessageBus\obj\Debug\netcoreapp3.1\MessageBus.AssemblyInfo.cs
+C:\GIT\API_Teste_Empresa\API-Empresa\MessageBus\obj\Debug\netcoreapp3.1\MessageBus.csproj.CoreCompileInputs.cache
+C:\GIT\API_Teste_Empresa\API-Empresa\MessageBus\obj\Debug\netcoreapp3.1\MessageBus.csproj.CopyComplete
+C:\GIT\API_Teste_Empresa\API-Empresa\MessageBus\obj\Debug\netcoreapp3.1\MessageBus.dll
+C:\GIT\API_Teste_Empresa\API-Empresa\MessageBus\obj\Debug\netcoreapp3.1\MessageBus.pdb

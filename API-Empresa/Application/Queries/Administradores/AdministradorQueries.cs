@@ -24,6 +24,7 @@ namespace Application.Queries.Administradores
 
             var administradorVm = new AdministradorViewModel
             {
+                AdministradorId = administrador.AdministradorId,
                 Nome = administrador.Nome,
                 Endereco = administrador.Endereco,
                 Email = administrador.Email,
@@ -45,6 +46,7 @@ namespace Application.Queries.Administradores
             {
                 listAdministradoresVm.Add(new AdministradorViewModel
                 {
+                    AdministradorId = item.AdministradorId,
                     Nome = item.Nome,
                     Endereco = item.Endereco,
                     Email = item.Email,
@@ -67,6 +69,7 @@ namespace Application.Queries.Administradores
             {
                 listUsuariosAtivos.Add(new UsuarioViewModel
                 {
+                    UsuarioId = item.UsuarioId,
                     Nome = item.Nome,
                     Endereco = item.Endereco,
                     Email = item.Email,

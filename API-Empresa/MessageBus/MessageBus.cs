@@ -2,6 +2,7 @@
 using EasyNetQ;
 using System;
 using System.Threading.Tasks;
+using EasyNetQ.Internals;
 using Polly;
 using RabbitMQ.Client.Exceptions;
 
@@ -46,6 +47,15 @@ namespace MessageBus
         {
             TryConnect();
             return _bus.Rpc.Respond(responder);
+        }
+
+        public AwaitableDisposable<IDisposable> RespondAsync<TRequest, TResponse>(
+            Func<TRequest, Task<TResponse>> responder) 
+            where TRequest : IntegrationEvent 
+            where TResponse : ResponseMessage
+        {
+            TryConnect();
+            return _bus.Rpc.RespondAsync(responder);
         }
 
         public async Task<TResponse> ResquestAsync<TRequest, TResponse>(TRequest request)

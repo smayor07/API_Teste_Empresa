@@ -1,6 +1,7 @@
 ﻿using Core.Integration;
 using System;
 using System.Threading.Tasks;
+using EasyNetQ.Internals;
 
 namespace MessageBus
 {
@@ -19,7 +20,7 @@ namespace MessageBus
         IDisposable Respond<TRequest, TResponse>(Func<TRequest, TResponse> responder)
             where TRequest : IntegrationEvent
             where TResponse : ResponseMessage;
-        IDisposable RespondAsync<TRequest, TResponse>(Func<TRequest, Task<TResponse>> responder)
+        AwaitableDisposable<IDisposable> RespondAsync<TRequest, TResponse>(Func<TRequest, Task<TResponse>> responder)
             where TRequest : IntegrationEvent
             where TResponse : ResponseMessage;
         bool isConnected { get; }

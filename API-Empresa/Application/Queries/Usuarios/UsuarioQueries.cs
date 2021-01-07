@@ -23,6 +23,7 @@ namespace Application.Queries.Usuarios
 
             var usuarioVm = new UsuarioViewModel
             {
+                UsuarioId = usuario.UsuarioId,
                 Nome = usuario.Nome,
                 Endereco = usuario.Endereco,
                 Email = usuario.Email,
@@ -44,6 +45,7 @@ namespace Application.Queries.Usuarios
             {
                 listUsuariosVm.Add(new UsuarioViewModel
                 {
+                    UsuarioId = item.UsuarioId,
                     Nome = item.Nome,
                     Endereco = item.Endereco,
                     Email = item.Email,
