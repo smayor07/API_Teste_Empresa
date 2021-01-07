@@ -23,6 +23,7 @@ namespace Application.Queries.Filmes
 
             var filmeVm = new FilmeViewModel
             {
+                FilmeId = filme.FilmeId,
                 Nome = filme.Nome,
                 Diretor = filme.Diretor,
                 Genero = filme.Genero,
@@ -44,6 +45,7 @@ namespace Application.Queries.Filmes
             {
                 listFilmesVm.Add(new FilmeViewModel
                 {
+                    FilmeId = item.FilmeId,
                     Nome = item.Nome,
                     Diretor = item.Diretor,
                     Genero = item.Genero,
@@ -66,6 +68,7 @@ namespace Application.Queries.Filmes
             {
                 listFilmesVm.Add(new FilmeViewModel
                 {
+                    FilmeId = item.FilmeId,
                     Nome = item.Nome,
                     Diretor = item.Diretor,
                     Genero = item.Genero,
@@ -88,6 +91,7 @@ namespace Application.Queries.Filmes
             {
                 listFilmesVm.Add(new FilmeViewModel
                 {
+                    FilmeId = item.FilmeId,
                     Nome = item.Nome,
                     Diretor = item.Diretor,
                     Genero = item.Genero,
@@ -110,6 +114,7 @@ namespace Application.Queries.Filmes
             {
                 listFilmesVm.Add(new FilmeViewModel
                 {
+                    FilmeId = item.FilmeId,
                     Nome = item.Nome,
                     Diretor = item.Diretor,
                     Genero = item.Genero,

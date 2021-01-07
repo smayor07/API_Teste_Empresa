@@ -6,6 +6,7 @@ namespace Application.Queries.ViewModels
 {
     public class FilmeViewModel
     {
+        public int FilmeId { get; set; }
         public string Nome { get; set; }
         public string Genero { get; set; }
         public string Diretor { get; set; }

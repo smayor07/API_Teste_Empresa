@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using API.Models;
 using Application.Commands.Filmes;
 using Application.Queries.Filmes;
 using Core.Bus;
+using Core.Integration;
+using Core.Integration.Filmes;
 using Entity.Entities;
 using Entity.Enum;
-using Entity.Interfaces.Application;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -225,7 +224,13 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        [Route("MensageriaVoto")]
+        [Route("IntegracaoVotoFilme")]
+        public async Task<ResponseMessage> RegistrarVoto(int filmeId, VotoEnum voto)
+        {
+            var filmeBd = _filmeQueries.ObterFilmePorId(filmeId);
+
+            var filmeVotado = new VotoFilmeIntegrationEvent(filmeBd.FilmeId, (int) voto);
+        }
 
     }
 }

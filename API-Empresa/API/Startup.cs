@@ -1,15 +1,9 @@
 using API.Setup;
 using Application;
-using Application.Commands.Filmes;
-using Core.Bus;
-using DataAccess.Context;
-using DataAccess.Repositories;
-using Entity.Interfaces.Application;
-using Entity.Interfaces.Repository;
+
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

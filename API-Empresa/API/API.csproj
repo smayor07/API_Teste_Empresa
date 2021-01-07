@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\WeatherForecastController.cs" />
+    <Compile Remove="Services\VotoFilmeIntegrationHandle.cs" />
     <Compile Remove="WeatherForecast.cs" />
   </ItemGroup>
 
@@ -26,6 +27,10 @@
     <ProjectReference Include="..\Entity\Entity.csproj" />
     <ProjectReference Include="..\Filmes.Application\Filmes.Application.csproj" />
     <ProjectReference Include="..\MessageBus\MessageBus.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
 
 

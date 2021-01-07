@@ -8,9 +8,10 @@ namespace Core.Integration
 {
     public class ResponseMessage : Message
     {
-        public ValidationResult ValidationResult { get; set; }
+        //public ValidationResult ValidationResult { get; set; }
+        public bool ValidationResult { get; set; }
 
-        public ResponseMessage(ValidationResult _validationResult)
+        public ResponseMessage(bool _validationResult)
         {
             ValidationResult = _validationResult;
         }
