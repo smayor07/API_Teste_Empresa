@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "1V2MUQEGTuR0kjWc0pJF5LYsupuHWMYS9GdFHgp8C2Wc9PwTc44sBjFW83fC9v24bxMv5ZlXKXE1LLipHxxX1Q==",
+  "dgSpecHash": "MSp1XHjtO/405fQb/9mAN8sJY9rm45f0RGKqFgVIjps72JWn+yLQRh2yB9Irxmhb87N6wpKqGbkzXfY97Ap/IQ==",
   "success": true,
   "projectFilePath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\smayo\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
-    "C:\\Users\\smayo\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+    "C:\\Users\\smayo\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\smayo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\smayo\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

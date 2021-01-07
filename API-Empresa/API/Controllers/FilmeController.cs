@@ -223,5 +223,9 @@ namespace API.Controllers
             }
             return resp;
         }
+
+        [HttpPost]
+        [Route("MensageriaVoto")]
+
     }
 }
