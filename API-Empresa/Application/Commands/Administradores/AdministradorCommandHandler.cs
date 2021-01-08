@@ -5,13 +5,14 @@ using Entity.Entities;
 using System.Threading;
 using System.Threading.Tasks;
 using System;
+using FluentValidation.Results;
 
 namespace Application.Commands.Administradores
 {
     public class AdministradorCommandHandler : 
-        IRequestHandler<CadastrarAdministradorCommand, bool>,
-        IRequestHandler<InativarAdministradorCommand, bool>,
-        IRequestHandler<EditarAdministradorCommand, bool>
+        IRequestHandler<CadastrarAdministradorCommand, ValidationResult>,
+        IRequestHandler<InativarAdministradorCommand, ValidationResult>,
+        IRequestHandler<EditarAdministradorCommand, ValidationResult>
     {
         private readonly IAdministradorRepository _administradorRepository;
 
@@ -20,21 +21,21 @@ namespace Application.Commands.Administradores
             _administradorRepository = administradorRepository;
         }
 
-        public async Task<bool> Handle(CadastrarAdministradorCommand command, CancellationToken cancellationToken)
+        public async Task<ValidationResult> Handle(CadastrarAdministradorCommand command, CancellationToken cancellationToken)
         {
-            if (!ValidarComando(command)) return false;
+            if (!command.EhValido()) return command.ValidationResult;
 
             Administrador administrador = new Administrador(command.Nome, command.Endereco, command.Email);
 
             _administradorRepository.CadastrarAdministrador(administrador);
             _administradorRepository.Dispose();
 
-            return true;
+            return command.ValidationResult;
         }
 
-        public async Task<bool> Handle(InativarAdministradorCommand command, CancellationToken cancellationToken)
+        public async Task<ValidationResult> Handle(InativarAdministradorCommand command, CancellationToken cancellationToken)
         {
-            if (!ValidarComando(command)) return false;
+            if (!command.EhValido()) return command.ValidationResult;
 
             var administrador = _administradorRepository.ObterAdministradorPorId(command.AdministradorId);
 
@@ -44,12 +45,12 @@ namespace Application.Commands.Administradores
             _administradorRepository.ExcluirAdministrador(administrador);
             _administradorRepository.Dispose();
 
-            return true;
+            return command.ValidationResult;
         }
 
-        public async Task<bool> Handle(EditarAdministradorCommand command, CancellationToken cancellationToken)
+        public async Task<ValidationResult> Handle(EditarAdministradorCommand command, CancellationToken cancellationToken)
         {
-            if (!ValidarComando(command)) return false;
+            if (!command.EhValido()) return command.ValidationResult;
 
             var administrador = _administradorRepository.ObterAdministradorPorId(command.AdministradorId);
 
@@ -63,18 +64,7 @@ namespace Application.Commands.Administradores
             _administradorRepository.EditarAdministrador(administrador);
             _administradorRepository.Dispose();
 
-            return true;
-        }
-
-        private bool ValidarComando(Command command)
-        {
-            if (command.EhValido()) return true;
-
-            foreach (var item in command.ValidationResult.Errors)
-            {
-                //lança um evento de erro
-            }
-            return false;
+            return command.ValidationResult;
         }
     }
 }

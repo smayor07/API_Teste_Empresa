@@ -10,6 +10,7 @@ using DataAccess.Context;
 using DataAccess.Repositories;
 using Entity.Interfaces.Application;
 using Entity.Interfaces.Repository;
+using FluentValidation.Results;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -36,22 +37,22 @@ namespace API.Setup
             services.AddScoped<IFilmeRepository, FilmeRepository>();
 
             //Commands Filmes
-            services.AddScoped<IRequestHandler<VotarFilmeCommand, bool>, FilmeCommandHandler>();
-            services.AddScoped<IRequestHandler<CadastrarFilmeCommand, bool>, FilmeCommandHandler>();
+            services.AddScoped<IRequestHandler<VotarFilmeCommand, ValidationResult>, FilmeCommandHandler>();
+            services.AddScoped<IRequestHandler<CadastrarFilmeCommand, ValidationResult>, FilmeCommandHandler>();
             //Queries Filmes
             services.AddScoped<IFilmeQueries, FilmeQueries>();
 
             //Commands Usuarios
-            services.AddScoped<IRequestHandler<CadastrarUsuarioCommand, bool>, UsuarioCommandHandler>();
-            services.AddScoped<IRequestHandler<InativarUsuarioCommand, bool>, UsuarioCommandHandler>();
-            services.AddScoped<IRequestHandler<EditarUsuarioCommand, bool>, UsuarioCommandHandler>();
+            services.AddScoped<IRequestHandler<CadastrarUsuarioCommand, ValidationResult>, UsuarioCommandHandler>();
+            services.AddScoped<IRequestHandler<InativarUsuarioCommand, ValidationResult>, UsuarioCommandHandler>();
+            services.AddScoped<IRequestHandler<EditarUsuarioCommand, ValidationResult>, UsuarioCommandHandler>();
             //Queries Usuarios
             services.AddScoped<IUsuarioQueries, UsuarioQueries>();
 
             //Commands Administradores
-            services.AddScoped<IRequestHandler<CadastrarAdministradorCommand, bool>, AdministradorCommandHandler>();
-            services.AddScoped<IRequestHandler<InativarAdministradorCommand, bool>, AdministradorCommandHandler>();
-            services.AddScoped<IRequestHandler<EditarAdministradorCommand, bool>, AdministradorCommandHandler>();
+            services.AddScoped<IRequestHandler<CadastrarAdministradorCommand, ValidationResult>, AdministradorCommandHandler>();
+            services.AddScoped<IRequestHandler<InativarAdministradorCommand, ValidationResult>, AdministradorCommandHandler>();
+            services.AddScoped<IRequestHandler<EditarAdministradorCommand, ValidationResult>, AdministradorCommandHandler>();
             //Queries Administradores
             services.AddScoped<IAdministradorQueries, AdministradorQueries>();
         }

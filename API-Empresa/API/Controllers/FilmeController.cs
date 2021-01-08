@@ -236,6 +236,5 @@ namespace API.Controllers
 
             return await _messageBus.ResquestAsync<VotoFilmeIntegrationEvent, ResponseMessage>(filmeVotado);
         }
-
     }
 }

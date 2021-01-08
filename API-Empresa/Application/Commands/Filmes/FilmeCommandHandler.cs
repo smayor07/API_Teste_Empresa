@@ -2,17 +2,15 @@
 using Entity.Entities;
 using Entity.Interfaces.Repository;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using FluentValidation.Results;
 
 namespace Application.Commands.Filmes
 {
     public class FilmeCommandHandler :
-        IRequestHandler<VotarFilmeCommand, bool>,
-        IRequestHandler<CadastrarFilmeCommand, bool>
+        IRequestHandler<VotarFilmeCommand, ValidationResult>,
+        IRequestHandler<CadastrarFilmeCommand, ValidationResult>
     {
         private readonly IFilmeRepository _filmeRepository;
 
@@ -21,9 +19,9 @@ namespace Application.Commands.Filmes
             _filmeRepository = filmeRepository;
         }
 
-        public async Task<bool> Handle(VotarFilmeCommand command, CancellationToken cancellationToken)
+        public async Task<ValidationResult> Handle(VotarFilmeCommand command, CancellationToken cancellationToken)
         {
-            if (!ValidarComando(command)) return false;
+            if (!command.EhValido()) return command.ValidationResult;
 
             var filme = _filmeRepository.ObterFilmePorId(command.FilmeId);
 
@@ -34,30 +32,19 @@ namespace Application.Commands.Filmes
             }
             _filmeRepository.Dispose();
 
-            return true;
+            return command.ValidationResult;
         }
 
-        public async Task<bool> Handle(CadastrarFilmeCommand command, CancellationToken cancellationToken)
+        public async Task<ValidationResult> Handle(CadastrarFilmeCommand command, CancellationToken cancellationToken)
         {
-            if (!ValidarComando(command)) return false;
+            if (!command.EhValido()) return command.ValidationResult;
 
             Filme filme = new Filme(command.Nome, command.Genero, command.Diretor, command.Votos);
 
             _filmeRepository.CadastrarFilme(filme);
             _filmeRepository.Dispose();
 
-            return true;
-        }
-
-        private bool ValidarComando(Command command)
-        {
-            if (command.EhValido()) return true;
-
-            foreach (var item in command.ValidationResult.Errors)
-            {
-                //lança um evento de erro
-            }
-            return false;
+            return command.ValidationResult;
         }
     }
 }

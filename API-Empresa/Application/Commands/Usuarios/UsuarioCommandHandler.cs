@@ -7,13 +7,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using FluentValidation.Results;
 
 namespace Application.Commands.Usuarios
 {
     public class UsuarioCommandHandler : 
-        IRequestHandler<CadastrarUsuarioCommand, bool>,
-        IRequestHandler<InativarUsuarioCommand, bool>,
-        IRequestHandler<EditarUsuarioCommand, bool>
+        IRequestHandler<CadastrarUsuarioCommand, ValidationResult>,
+        IRequestHandler<InativarUsuarioCommand, ValidationResult>,
+        IRequestHandler<EditarUsuarioCommand, ValidationResult>
     {
         private readonly IUsuarioRepository _usuarioRepository;
 
@@ -22,21 +23,20 @@ namespace Application.Commands.Usuarios
             _usuarioRepository = usuarioRepository;
         }
 
-        public async Task<bool> Handle(CadastrarUsuarioCommand command, CancellationToken cancellationToken)
+        public async Task<ValidationResult> Handle(CadastrarUsuarioCommand command, CancellationToken cancellationToken)
         {
-            if (!ValidarComando(command)) return false;
+            if (!command.EhValido()) return command.ValidationResult;
 
             Usuario usuario = new Usuario(command.Nome, command.Endereco, command.Email);
 
             _usuarioRepository.CadastrarUsuario(usuario);
             _usuarioRepository.Dispose();
 
-            return true;
+            return command.ValidationResult;
         }
-
-        public async Task<bool> Handle(InativarUsuarioCommand command, CancellationToken cancellationToken)
+        public async Task<ValidationResult> Handle(InativarUsuarioCommand command, CancellationToken cancellationToken)
         {
-            if (!ValidarComando(command)) return false;
+            if (!command.EhValido()) return command.ValidationResult;
 
             var usuario = _usuarioRepository.ObterUsuarioPorId(command.UsuarioId);
 
@@ -46,12 +46,11 @@ namespace Application.Commands.Usuarios
             _usuarioRepository.ExcluirUsuario(usuario);
             _usuarioRepository.Dispose();
 
-            return true;
+            return command.ValidationResult;
         }
-
-        public async Task<bool> Handle(EditarUsuarioCommand command, CancellationToken cancellationToken)
+        public async Task<ValidationResult> Handle(EditarUsuarioCommand command, CancellationToken cancellationToken)
         {
-            if (!ValidarComando(command)) return false;
+            if (!command.EhValido()) return command.ValidationResult;
 
             var usuario = _usuarioRepository.ObterUsuarioPorId(command.UsuarioId);
 
@@ -65,18 +64,7 @@ namespace Application.Commands.Usuarios
             _usuarioRepository.EditarUsuario(usuario);
             _usuarioRepository.Dispose();
 
-            return true;
-        }
-
-        private bool ValidarComando(Command command)
-        {
-            if (command.EhValido()) return true;
-
-            foreach (var item in command.ValidationResult.Errors)
-            {
-                //lança um evento de erro
-            }
-            return false;
+            return command.ValidationResult;
         }
     }
 }

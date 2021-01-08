@@ -5,7 +5,7 @@ using System;
 
 namespace Core
 {
-    public abstract class Command : Message, IRequest<bool>
+    public abstract class Command : Message, IRequest<ValidationResult>
     {
         public DateTime Timestamp { get; set; }
         public ValidationResult ValidationResult { get; set; }

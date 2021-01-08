@@ -5,6 +5,7 @@ using Application.Commands.Filmes;
 using Core.Bus;
 using Core.Integration;
 using Core.Integration.Filmes;
+using FluentValidation.Results;
 using MessageBus;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,7 +33,7 @@ namespace API.Services
         private async Task<ResponseMessage> VotarFilme(VotoFilmeIntegrationEvent message)
         {
             var filmeCommand = new VotarFilmeCommand(message.FilmeId, message.Votos);
-            bool sucesso = false;
+            ValidationResult sucesso;
 
             using (var scope = _serviceProvider.CreateScope())
             {

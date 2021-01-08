@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation.Results;
 
 namespace Core.Bus
 {
@@ -20,7 +21,7 @@ namespace Core.Bus
             await _mediator.Publish(evento);
         }
 
-        public async Task<bool> EnviarComando<T>(T comando) where T : Command
+        public async Task<ValidationResult> EnviarComando<T>(T comando) where T : Command
         {
             return await _mediator.Send(comando);
         }
