@@ -31,6 +31,7 @@
           "MediatR": "9.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
           "MessageBus": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.0",
           "Swashbuckle.AspNetCore": "5.6.3",
@@ -311,15 +312,15 @@
           "API.dll": {}
         }
       },
-      "EasyNetQ/6.3.1": {
+      "EasyNetQ/5.6.0": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "RabbitMQ.Client": "6.2.1"
         },
         "runtime": {
           "lib/netstandard2.0/EasyNetQ.dll": {
-            "assemblyVersion": "6.3.1.0",
-            "fileVersion": "6.3.1.0"
+            "assemblyVersion": "5.6.0.0",
+            "fileVersion": "5.6.0.0"
           }
         },
         "compile": {
@@ -369,6 +370,37 @@
         },
         "compile": {
           "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.JsonPatch/3.1.2": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {
+            "assemblyVersion": "3.1.2.0",
+            "fileVersion": "3.100.220.6801"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.1.2": {
+        "dependencies": {
+          "Microsoft.AspNetCore.JsonPatch": "3.1.2",
+          "Newtonsoft.Json": "12.0.3",
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {
+            "assemblyVersion": "3.1.2.0",
+            "fileVersion": "3.100.220.6801"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {}
         }
       },
       "Microsoft.CSharp/4.7.0": {},
@@ -786,6 +818,20 @@
         },
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.2.22727"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "Polly/7.2.1": {
@@ -1555,7 +1601,7 @@
       "MessageBus/1.0.0": {
         "dependencies": {
           "Core": "1.0.0",
-          "EasyNetQ": "6.3.1",
+          "EasyNetQ": "5.6.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "Polly": "7.2.1"
         },
@@ -3188,12 +3234,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "EasyNetQ/6.3.1": {
+    "EasyNetQ/5.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WBZxeGj5ivoCA12rnAy4hG12i8FS9mYi9o91+48fJ9Ei2+EOPsZ/6Y+C4z8Q0Rh9dgxC8rsZ2fW1qVd9yGlEUA==",
-      "path": "easynetq/6.3.1",
-      "hashPath": "easynetq.6.3.1.nupkg.sha512"
+      "sha512": "sha512-RmO8QDKH7D8sjGbjFyXVxB/J/nV/Vy23Zh7jfCF9/ZQE8JjmMX6PhKnj9F9vnUXEx6cWsbbpr5dL6dbm7qLW6A==",
+      "path": "easynetq/5.6.0",
+      "hashPath": "easynetq.5.6.0.nupkg.sha512"
     },
     "FluentValidation/9.3.0": {
       "type": "package",
@@ -3222,6 +3268,20 @@
       "sha512": "sha512-msreY4ogiPdIRWiCQVHQDytIQpsZCLWsixWPZ+Xs86KZrvtuiV8BDHbIT0kBmogynVYWNpspb3caw+86YU8L6w==",
       "path": "mediatr.extensions.microsoft.dependencyinjection/9.0.0",
       "hashPath": "mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.JsonPatch/3.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fdrF8gZnWy/sAtRgV6IMRr9V6t8nfTqS6VpzPUnCqe8vFnWlJP/J45LULpQfRCuyq7Mdk1qoDOnT9S9qI0Exqw==",
+      "path": "microsoft.aspnetcore.jsonpatch/3.1.2",
+      "hashPath": "microsoft.aspnetcore.jsonpatch.3.1.2.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pa3e4g6ppyn8fJHYxJCuMfCqIp2e8VWF2Cgl4XmQV3dnJHoGMZnZFnmnCNVsdQKbLTFpDiox2r48/KDo0czV2Q==",
+      "path": "microsoft.aspnetcore.mvc.newtonsoftjson/3.1.2",
+      "hashPath": "microsoft.aspnetcore.mvc.newtonsoftjson.3.1.2.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
@@ -3446,6 +3506,13 @@
       "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json.Bson/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+      "path": "newtonsoft.json.bson/1.0.2",
+      "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
     },
     "Polly/7.2.1": {
       "type": "package",

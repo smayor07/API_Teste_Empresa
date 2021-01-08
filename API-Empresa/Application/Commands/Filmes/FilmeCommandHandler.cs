@@ -1,5 +1,4 @@
-﻿using Core;
-using Entity.Entities;
+﻿using Entity.Entities;
 using Entity.Interfaces.Repository;
 using MediatR;
 using System.Threading;

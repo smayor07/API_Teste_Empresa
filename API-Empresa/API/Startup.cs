@@ -1,5 +1,4 @@
 using API.Setup;
-using Application;
 
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -29,7 +28,11 @@ namespace API
 
             services.AddMessageBusConfiguration(Configuration);
 
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             services.AddMediatR(typeof(Startup));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API-Teste Empresa", Version = "v1" });

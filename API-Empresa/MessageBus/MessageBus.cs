@@ -33,12 +33,32 @@ namespace MessageBus
             await _bus.PublishAsync(message);
         }
 
+        public void Subscribe<T>(string subscriptionId, Action<T> onMessage) where T : class
+        {
+            TryConnect();
+            _bus.Subscribe(subscriptionId, onMessage);
+        }
+
+        public void SubscribeAsync<T>(string subscriptionId, Func<T, Task> onMessage) where T : class
+        {
+            TryConnect();
+            _bus.SubscribeAsync(subscriptionId, onMessage);
+        }
+
         public TResponse Request<TResquest, TResponse>(TResquest request)
             where TResquest : IntegrationEvent
             where TResponse : ResponseMessage
         {
             TryConnect();
             return _bus.Request<TResquest, TResponse>(request);
+        }
+
+        public async Task<TResponse> RequestAsync<TRequest, TResponse>(TRequest request)
+            where TRequest : IntegrationEvent
+            where TResponse : ResponseMessage
+        {
+            TryConnect();
+            return await _bus.RequestAsync<TRequest, TResponse>(request);
         }
 
         public IDisposable Respond<TRequest, TResponse>(Func<TRequest, TResponse> responder)
@@ -58,25 +78,6 @@ namespace MessageBus
             return _bus.RespondAsync(responder);
         }
 
-        public async Task<TResponse> RequestAsync<TRequest, TResponse>(TRequest request)
-            where TRequest : IntegrationEvent
-            where TResponse : ResponseMessage
-        {
-            TryConnect();
-            return await _bus.RequestAsync<TRequest, TResponse>(request);
-        }
-
-        public void Subscribe<T>(string subscriptionId, Action<T> onMessage) where T : class
-        {
-            TryConnect();
-            _bus.Subscribe(subscriptionId, onMessage);
-        }
-
-        public void SubscribeAsync<T>(string subscriptionId, Func<T, Task> onMessage) where T : class
-        {
-            TryConnect();
-            _bus.SubscribeAsync(subscriptionId, onMessage);
-        }
         private void TryConnect()
         {
             if (isConnected) return;
