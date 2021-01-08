@@ -58,7 +58,7 @@ namespace MessageBus
             return _bus.Rpc.RespondAsync(responder);
         }
 
-        public async Task<TResponse> ResquestAsync<TRequest, TResponse>(TRequest request)
+        public async Task<TResponse> RequestAsync<TRequest, TResponse>(TRequest request)
             where TRequest : IntegrationEvent
             where TResponse : ResponseMessage
         {

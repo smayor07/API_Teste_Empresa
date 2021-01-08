@@ -234,7 +234,7 @@ namespace API.Controllers
 
             var filmeVotado = new VotoFilmeIntegrationEvent(filmeBd.FilmeId, (int) voto);
 
-            return await _messageBus.ResquestAsync<VotoFilmeIntegrationEvent, ResponseMessage>(filmeVotado);
+            return await _messageBus.RequestAsync<VotoFilmeIntegrationEvent, ResponseMessage>(filmeVotado);
         }
     }
 }

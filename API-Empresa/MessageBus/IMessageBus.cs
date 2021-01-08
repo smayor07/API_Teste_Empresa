@@ -14,7 +14,7 @@ namespace MessageBus
         TResponse Request<TResquest, TResponse>(TResquest request)
             where TResquest : IntegrationEvent
             where TResponse : ResponseMessage;
-        Task<TResponse> ResquestAsync<TRequest, TResponse>(TRequest request)
+        Task<TResponse> RequestAsync<TRequest, TResponse>(TRequest request)
             where TRequest : IntegrationEvent
             where TResponse : ResponseMessage;
         IDisposable Respond<TRequest, TResponse>(Func<TRequest, TResponse> responder)
