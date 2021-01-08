@@ -24,13 +24,13 @@ namespace MessageBus
         public void Publish<T>(T message) where T : IntegrationEvent
         {
             TryConnect();
-            _bus.PubSub.Publish(message);
+            _bus.Publish(message);
         }
 
         public async Task PublishAsync<T>(T message) where T : IntegrationEvent
         {
             TryConnect();
-            await _bus.PubSub.PublishAsync(message);
+            await _bus.PublishAsync(message);
         }
 
         public TResponse Request<TResquest, TResponse>(TResquest request)
@@ -38,7 +38,7 @@ namespace MessageBus
             where TResponse : ResponseMessage
         {
             TryConnect();
-            return _bus.Rpc.Request<TResquest, TResponse>(request);
+            return _bus.Request<TResquest, TResponse>(request);
         }
 
         public IDisposable Respond<TRequest, TResponse>(Func<TRequest, TResponse> responder)
@@ -46,16 +46,16 @@ namespace MessageBus
             where TResponse : ResponseMessage
         {
             TryConnect();
-            return _bus.Rpc.Respond(responder);
+            return _bus.Respond(responder);
         }
 
-        public AwaitableDisposable<IDisposable> RespondAsync<TRequest, TResponse>(
+        public IDisposable RespondAsync<TRequest, TResponse>(
             Func<TRequest, Task<TResponse>> responder) 
             where TRequest : IntegrationEvent 
             where TResponse : ResponseMessage
         {
             TryConnect();
-            return _bus.Rpc.RespondAsync(responder);
+            return _bus.RespondAsync(responder);
         }
 
         public async Task<TResponse> RequestAsync<TRequest, TResponse>(TRequest request)
@@ -63,19 +63,19 @@ namespace MessageBus
             where TResponse : ResponseMessage
         {
             TryConnect();
-            return await _bus.Rpc.RequestAsync<TRequest, TResponse>(request);
+            return await _bus.RequestAsync<TRequest, TResponse>(request);
         }
 
         public void Subscribe<T>(string subscriptionId, Action<T> onMessage) where T : class
         {
             TryConnect();
-            _bus.PubSub.Subscribe(subscriptionId, onMessage);
+            _bus.Subscribe(subscriptionId, onMessage);
         }
 
         public void SubscribeAsync<T>(string subscriptionId, Func<T, Task> onMessage) where T : class
         {
             TryConnect();
-            _bus.PubSub.SubscribeAsync(subscriptionId, onMessage);
+            _bus.SubscribeAsync(subscriptionId, onMessage);
         }
         private void TryConnect()
         {

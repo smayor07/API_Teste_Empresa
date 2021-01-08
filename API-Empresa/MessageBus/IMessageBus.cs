@@ -20,7 +20,7 @@ namespace MessageBus
         IDisposable Respond<TRequest, TResponse>(Func<TRequest, TResponse> responder)
             where TRequest : IntegrationEvent
             where TResponse : ResponseMessage;
-        AwaitableDisposable<IDisposable> RespondAsync<TRequest, TResponse>(Func<TRequest, Task<TResponse>> responder)
+        IDisposable RespondAsync<TRequest, TResponse>(Func<TRequest, Task<TResponse>> responder)
             where TRequest : IntegrationEvent
             where TResponse : ResponseMessage;
         bool isConnected { get; }

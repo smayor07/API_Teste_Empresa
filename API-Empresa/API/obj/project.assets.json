@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "EasyNetQ/6.3.1": {
+      "EasyNetQ/5.6.0": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
@@ -1683,7 +1683,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Core": "1.0.0",
-          "EasyNetQ": "6.3.1",
+          "EasyNetQ": "5.6.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "Polly": "7.2.1"
         },
@@ -1697,14 +1697,14 @@
     }
   },
   "libraries": {
-    "EasyNetQ/6.3.1": {
-      "sha512": "WBZxeGj5ivoCA12rnAy4hG12i8FS9mYi9o91+48fJ9Ei2+EOPsZ/6Y+C4z8Q0Rh9dgxC8rsZ2fW1qVd9yGlEUA==",
+    "EasyNetQ/5.6.0": {
+      "sha512": "RmO8QDKH7D8sjGbjFyXVxB/J/nV/Vy23Zh7jfCF9/ZQE8JjmMX6PhKnj9F9vnUXEx6cWsbbpr5dL6dbm7qLW6A==",
       "type": "package",
-      "path": "easynetq/6.3.1",
+      "path": "easynetq/5.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "easynetq.6.3.1.nupkg.sha512",
+        "easynetq.5.6.0.nupkg.sha512",
         "easynetq.nuspec",
         "lib/net461/EasyNetQ.dll",
         "lib/net461/EasyNetQ.pdb",

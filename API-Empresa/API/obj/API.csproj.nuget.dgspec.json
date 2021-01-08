@@ -570,7 +570,7 @@
           "dependencies": {
             "EasyNetQ": {
               "target": "Package",
-              "version": "[6.3.1, )"
+              "version": "[5.6.0, )"
             },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",

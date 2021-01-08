@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "In0/dcPCjn0Zf0X9e5keD3NzFFG3tl3LTjA7rF48eo3B0KlIqrNdmzHonOd2VIABBCAzLwnbIKaulop2X3kblQ==",
+  "dgSpecHash": "Q/95kDgsbfWsesvRNrcO+GfUyO0KFrFnL4/xF5q4fJqIXkMSI63vZiaV2ndQRosAVtkmcPXHVm3fBnZiwGjoLw==",
   "success": true,
   "projectFilePath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\MessageBus\\MessageBus.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\smayo\\.nuget\\packages\\easynetq\\6.3.1\\easynetq.6.3.1.nupkg.sha512",
+    "C:\\Users\\smayo\\.nuget\\packages\\easynetq\\5.6.0\\easynetq.5.6.0.nupkg.sha512",
     "C:\\Users\\smayo\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
     "C:\\Users\\smayo\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\smayo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",

@@ -22,6 +22,7 @@ namespace API.Services
             _serviceProvider = serviceProvider;
             _messageBus = messageBus;
         }
+
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _messageBus.RespondAsync<VotoFilmeIntegrationEvent, ResponseMessage>(async request =>
