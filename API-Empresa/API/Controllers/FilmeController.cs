@@ -59,16 +59,15 @@ namespace API.Controllers
 
         [HttpPut]
         [Route("VotarFilme")]
-        public BaseResponse VotarFilme(int id, VotoEnum voto)
+        public async Task<BaseResponse> VotarFilme(int id, VotoEnum voto)
         {
             var resp = new BaseResponse();
 
             try
             {
-                var votoFilmeIntegration = new VotoFilmeIntegrationEvent(id, (int) voto);
-                var filmeResult = RegistrarVoto(votoFilmeIntegration);
+                var filmeResult = await RegistrarVoto(id, (int)voto);
 
-                if (!filmeResult.Result.ValidationResult.IsValid)
+                if (!filmeResult.ValidationResult.IsValid)
                 {
                     resp.Valor = filmeResult;
                     resp.Mensagem = "Ocorreu um erro ao efetuar o voto!";
@@ -81,9 +80,6 @@ namespace API.Controllers
                     resp.Sucesso = true;
                 }
 
-                //var command = new VotarFilmeCommand(id, (int)voto);
-                //_mediatorHandler.EnviarComando(command);
-                
             }
             catch (Exception ex)
             {
@@ -240,11 +236,11 @@ namespace API.Controllers
             return resp;
         }
 
-        private async Task<ResponseMessage> RegistrarVoto(VotoFilmeIntegrationEvent votoFilmeIntegration)
+        private async Task<ResponseMessage> RegistrarVoto(int id, int voto)
         {
-            var filmeBd = _filmeQueries.ObterFilmePorId(votoFilmeIntegration.FilmeId);
+            var filmeBd = _filmeQueries.ObterFilmePorId(id);
 
-            var filmeVotado = new VotoFilmeIntegrationEvent(filmeBd.FilmeId, votoFilmeIntegration.Votos);
+            var filmeVotado = new VotoFilmeIntegrationEvent(filmeBd.FilmeId, voto);
 
             return await _messageBus.RequestAsync<VotoFilmeIntegrationEvent, ResponseMessage>(filmeVotado);
         }

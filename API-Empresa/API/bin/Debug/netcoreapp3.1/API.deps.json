@@ -1525,7 +1525,8 @@
           "Core": "1.0.0",
           "DataAccess": "1.0.0",
           "Entity": "1.0.0",
-          "MediatR": "9.0.0"
+          "MediatR": "9.0.0",
+          "MessageBus": "1.0.0"
         },
         "runtime": {
           "Application.dll": {}

@@ -138,6 +138,9 @@
               },
               "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj": {
                 "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\Entity\\Entity.csproj"
+              },
+              "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\MessageBus\\MessageBus.csproj": {
+                "projectPath": "C:\\GIT\\API_Teste_Empresa\\API-Empresa\\MessageBus\\MessageBus.csproj"
               }
             }
           }
